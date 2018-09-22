@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>云淡天长&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://yundantianchang.github.io/"/>
+  <updated>2018-09-21T04:54:57.000Z</updated>
+  <id>https://yundantianchang.github.io/</id>
+  
+  <author>
+    <name>云淡天长</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu使用wine运行windows软件</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0921-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0921-1.html</id>
+    <published>2018-09-21T04:54:57.000Z</published>
+    <updated>2018-09-21T04:54:57.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>悄悄告诉你,ubuntu下是可以运行非常多的windows软件的.<br><a id="more"></a></p><h1 id="现状"><a href="#现状" class="headerlink" title="现状"></a>现状</h1><p>ubuntu现在已经非常的好用,已经有比较多的国产软件支持ubuntu等linux操作系统,例如搜狗输入法,金山wps,网易云音乐等.但是对于qq,微信,百度云以及迅雷等,尚未有相应的linux版本.</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>核心方法为使用wine来直接安装windows下的一些软件.具体方法有:</p><h2 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h2><p>wine有一个比较好开源的界面:playonlinux,ubuntu官方源里面就有,可以直接安装<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install playonlinux</span><br></pre></td></tr></table></figure></p><p>安装之后,打开playonlinux,可以自行安装非常多的windows软件,甚至包括office03,office07以及office2010等,个人测试,已经比较稳定.</p><h2 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h2><p>当然,也可以使用另外一个更加优秀的wine界面:crossover,但是该软件是收费软件,价格本身并不贵.</p><h2 id="方法3"><a href="#方法3" class="headerlink" title="方法3"></a>方法3</h2><p>使用deepin的移植版本,链接为:<a href="https://github.com/wszqkzqk/deepin-wine-ubuntu" target="_blank" rel="noopener">deepin-wine-ubuntu</a> 或者 <a href="https://github.com/yundantianchang/deepin-wine-ubuntu" target="_blank" rel="noopener">deepin-wine-ubuntu</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;悄悄告诉你,ubuntu下是可以运行非常多的windows软件的.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/categories/ubuntu/"/>
+    
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="windows" scheme="https://yundantianchang.github.io/tags/windows/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>网易云音乐在ubuntu18.04配置</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0920-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0920-1.html</id>
+    <published>2018-09-20T04:19:37.000Z</published>
+    <updated>2018-09-20T04:19:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>网易云音乐ubuntu平台最新版本为<a href="https://music.163.com/#/download" target="_blank" rel="noopener">1.1.0</a> ,在ubuntu16.04平台使用没有问题,但是在ubuntu18.04上,会出现无法启动的问题.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>ubuntu18.04相对于ubuntu16.04桌面环境有所变化,而网易云音乐尚未对ubuntu18.04进行适配工作.</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>比较两个系统平台桌面环境差别之后发现,重要原因就是SESSION_MANAGER差异.因此解决方法很简单,在启动网易云音乐之前,删掉SESSION_MANAGER环境变量即可.代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> SESSION_MANAGER</span><br><span class="line">/usr/bin/netease-cloud-music</span><br></pre></td></tr></table></figure></p><p>在终端直接运行上述命令,网易云音乐立即就会正常启动.也可以使用以下方法将其集成到桌面环境,代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建$HOME/bin 目录</span></span><br><span class="line">mkdir -p ~/bin/</span><br><span class="line"><span class="comment"># 创建启动脚本</span></span><br><span class="line">cat &lt;&lt; eof &gt; ~/bin/netease-cloud-music</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">unset</span> SESSION_MANAGER</span><br><span class="line"><span class="built_in">exec</span> /usr/bin/netease-cloud-music <span class="string">"\$@"</span></span><br><span class="line">eof</span><br><span class="line"><span class="comment"># 添加可执行权限</span></span><br><span class="line">chmod +x ~/bin/netease-cloud-music</span><br></pre></td></tr></table></figure></p><p>实现原理为使用自定义的启动脚本取代网易云音乐启动脚本.可能需要注销之后才能生效,以实际测试为准.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;网易云音乐ubuntu平台最新版本为&lt;a href=&quot;https://music.163.com/#/download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.1.0&lt;/a&gt; ,在ubuntu16.04平台使用没有问题,但是在ubuntu18.04上,会出现无法启动的问题.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/categories/ubuntu/"/>
+    
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="网易云音乐" scheme="https://yundantianchang.github.io/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>catia修图常用命令</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0915-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0915-1.html</id>
+    <published>2018-09-15T08:01:43.000Z</published>
+    <updated>2018-09-15T08:01:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="catia-创成式外形设计-常用命令作用"><a href="#catia-创成式外形设计-常用命令作用" class="headerlink" title="catia 创成式外形设计 常用命令作用"></a>catia 创成式外形设计 常用命令作用</h1><a id="more"></a><p>修复:可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适.<br>曲面简化:可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充.<br>封闭曲面:曲面转实体<br>添加:进行布尔和运算</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;catia-创成式外形设计-常用命令作用&quot;&gt;&lt;a href=&quot;#catia-创成式外形设计-常用命令作用&quot; class=&quot;headerlink&quot; title=&quot;catia 创成式外形设计 常用命令作用&quot;&gt;&lt;/a&gt;catia 创成式外形设计 常用命令作用&lt;/h1&gt;
+    
+    </summary>
+    
+      <category term="catia" scheme="https://yundantianchang.github.io/categories/catia/"/>
+    
+    
+      <category term="catia" scheme="https://yundantianchang.github.io/tags/catia/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Shell脚本8种字符串截取方法总结</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0910-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0910-1.html</id>
+    <published>2018-09-10T08:03:59.000Z</published>
+    <updated>2018-09-10T08:03:59.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://www.jb51.net/article/56563.htm" target="_blank" rel="noopener">转载自脚本之家</a> </p><p>这篇文章主要介绍了Shell脚本8种字符串截取方法总结,每个方法给出了实例代码和操作结果,一目了然,需要的朋友可以参考下</p><a id="more"></a><p>Linux 的字符串截取很有用。有八种方法。</p><p>假设有变量 var=<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">http://www.aaa.com/123.htm</a>.</p><h1 id="号截取，删除左边字符，保留右边字符。"><a href="#号截取，删除左边字符，保留右边字符。" class="headerlink" title="# 号截取，删除左边字符，保留右边字符。"></a># 号截取，删除左边字符，保留右边字符。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var#*//&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中 var 是变量名，# 号是运算符，*// 表示从左边开始删除第一个 // 号及左边的所有字符<br>即删除 http://<br>结果是 ：<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">www.aaa.com/123.htm</a></p><h1 id="号截取，删除左边字符，保留右边字符。-1"><a href="#号截取，删除左边字符，保留右边字符。-1" class="headerlink" title="## 号截取，删除左边字符，保留右边字符。"></a>## 号截取，删除左边字符，保留右边字符。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var##*/&#125;</span></span><br></pre></td></tr></table></figure></p><p>##*/ 表示从左边开始删除最后（最右边）一个 / 号及左边的所有字符<br>即删除 <a href="http://www.aaa.com/" target="_blank" rel="noopener">http://www.aaa.com/</a></p><p>结果是 123.htm</p><h1 id="号截取，删除右边字符，保留左边字符"><a href="#号截取，删除右边字符，保留左边字符" class="headerlink" title="%号截取，删除右边字符，保留左边字符"></a>%号截取，删除右边字符，保留左边字符</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var%/*&#125;</span></span><br></pre></td></tr></table></figure></p><p>%/* 表示从右边开始，删除第一个 / 号及右边的字符</p><p>结果是：<a href="http://www.aaa.com" target="_blank" rel="noopener">http://www.aaa.com</a></p><h1 id="号截取，删除右边字符，保留左边字符-1"><a href="#号截取，删除右边字符，保留左边字符-1" class="headerlink" title="%% 号截取，删除右边字符，保留左边字符"></a>%% 号截取，删除右边字符，保留左边字符</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var%%/*&#125;</span></span><br></pre></td></tr></table></figure></p><p>%%/* 表示从右边开始，删除最后（最左边）一个 / 号及右边的字符<br>结果是：http:</p><h1 id="从左边第几个字符开始，及字符的个数"><a href="#从左边第几个字符开始，及字符的个数" class="headerlink" title="从左边第几个字符开始，及字符的个数"></a>从左边第几个字符开始，及字符的个数</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0:5&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 0 表示左边第一个字符开始，5 表示字符的总个数。<br>结果是：http:</p><h1 id="从左边第几个字符开始，一直到结束。"><a href="#从左边第几个字符开始，一直到结束。" class="headerlink" title="从左边第几个字符开始，一直到结束。"></a>从左边第几个字符开始，一直到结束。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:7&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 7 表示左边第8个字符开始，一直到结束。<br>结果是 ：<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">www.aaa.com/123.htm</a></p><h1 id="从右边第几个字符开始，及字符的个数"><a href="#从右边第几个字符开始，及字符的个数" class="headerlink" title="从右边第几个字符开始，及字符的个数"></a>从右边第几个字符开始，及字符的个数</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0-7:3&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 0-7 表示右边算起第七个字符开始，3 表示字符的个数。<br>结果是：123</p><h1 id="从右边第几个字符开始，一直到结束。"><a href="#从右边第几个字符开始，一直到结束。" class="headerlink" title="从右边第几个字符开始，一直到结束。"></a>从右边第几个字符开始，一直到结束。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0-7&#125;</span></span><br></pre></td></tr></table></figure></p><p>表示从右边第七个字符开始，一直到结束。<br>结果是：123.htm</p><p>注：（左边的第一个字符是用 0 表示，右边的第一个字符用 0-1 表示）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://www.jb51.net/article/56563.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;转载自脚本之家&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;这篇文章主要介绍了Shell脚本8种字符串截取方法总结,每个方法给出了实例代码和操作结果,一目了然,需要的朋友可以参考下&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
+    
+      <category term="bash" scheme="https://yundantianchang.github.io/categories/linux/bash/"/>
+    
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="bash" scheme="https://yundantianchang.github.io/tags/bash/"/>
+    
+      <category term="shell" scheme="https://yundantianchang.github.io/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>icem在ubuntu平台安装配置教程</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0906-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0906-1.html</id>
+    <published>2018-09-06T06:22:37.000Z</published>
+    <updated>2018-09-06T06:22:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>icem在ubuntu上安装之后,启动icemcfd出现segmentation fault.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>icem启动过程中需要调用一些脚本,而其shell为csh,用户安装的csh可能存在bug,具体表现为调用eval函数时出现段错误.</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>csh有问题,但是tcsh作为csh的增强版,其本身没有问题.因此解决方法为卸载csh,安装tcsh.具体操作为打开终端<br>卸载csh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove csh</span><br></pre></td></tr></table></figure></p><p>安装tcsh<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install tcsh</span><br></pre></td></tr></table></figure></p><h1 id="适用条件"><a href="#适用条件" class="headerlink" title="适用条件"></a>适用条件</h1><p>操作系统为ubuntu18.04,ansys版本为18,19均可以.其它没有经过测试,以实际测试为准.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;icem在ubuntu上安装之后,启动icemcfd出现segmentation fault.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="icem" scheme="https://yundantianchang.github.io/categories/icem/"/>
+    
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
+    
+      <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fluent在ubuntu平台安装配置教程</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/0905-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/0905-1.html</id>
+    <published>2018-09-05T06:22:37.000Z</published>
+    <updated>2018-09-05T06:22:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>ubuntu 为了加快运行速度,使用dash取代bash作为系统默认shell,路径为/bin/sh,而dash不支持某些运算符,导致fluent启动失败.</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>使用bash作为系统默认shell,方法为打开终端,运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure dash</span><br></pre></td></tr></table></figure></p><p>选择no,即可.</p><h1 id="适用条件"><a href="#适用条件" class="headerlink" title="适用条件"></a>适用条件</h1><p>操作系统为ubuntu16.04,ubuntu18.04,ansys版本为14.5,15,16,17,18,19均可以.其它没有经过测试,以实际测试为准.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="fluent" scheme="https://yundantianchang.github.io/categories/fluent/"/>
+    
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="fluent" scheme="https://yundantianchang.github.io/tags/fluent/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fluent17在win7平台启动卡死问题</title>
+    <link href="https://yundantianchang.github.io/blogs/2016/1207-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2016/1207-1.html</id>
+    <published>2016-12-07T15:08:00.000Z</published>
+    <updated>2018-09-01T15:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>fluent在win7 sp1上无法使用,启动卡死.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>fluent的求解器使用了 kernel32.dll 中的AddDllDirectory函数,而该函数在win7 sp1 中并不存在,结果fluent启动后卡死,无法使用.<br>AddDllDirectory的说明网址为<br><a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh310513(v=vs.85).aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh310513(v=vs.85).aspx</a><br>对于该问题,其核心内容为KB2533623 on Windows 7, Windows Server 2008 R2, Windows Vista, and Windows Server 2008</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>解决方法很简单,安装KB2533623补丁即可.经测试,本方法同样适用于ansys18.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;fluent在win7 sp1上无法使用,启动卡死.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="fluent" scheme="https://yundantianchang.github.io/categories/fluent/"/>
+    
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
+    
+      <category term="fluent" scheme="https://yundantianchang.github.io/tags/fluent/"/>
+    
+      <category term="window" scheme="https://yundantianchang.github.io/tags/window/"/>
+    
+      <category term="win7" scheme="https://yundantianchang.github.io/tags/win7/"/>
+    
+  </entry>
+  
+</feed>

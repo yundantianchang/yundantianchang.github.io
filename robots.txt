@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Allow: /about/
+Allow: /archives/
+Allow: /blogs/
+Allow: /categories/
+Allow: /tags/ 
+
+Disallow: /css/
+Disallow: /images/
+Disallow: /js/
+Disallow: /lib/
+Disallow: /static/
+
+Sitemap: https://yundantianchang.github.io/sitemap.xml
+Sitemap: https://yundantianchang.github.io/baidusitemap.xml
