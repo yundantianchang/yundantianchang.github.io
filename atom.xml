@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-09-21T04:54:57.000Z</updated>
+  <updated>2018-10-01T01:54:20.702Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python判断数字是否是inf或者nan</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1001-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1001-1.html</id>
+    <published>2018-10-01T01:41:13.000Z</published>
+    <updated>2018-10-01T01:54:20.702Z</updated>
+    
+    <content type="html"><![CDATA[<p>一共有两种方法<br><a id="more"></a></p><h1 id="使用math模块"><a href="#使用math模块" class="headerlink" title="使用math模块"></a>使用math模块</h1><p>代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line">a=float(<span class="string">'inf'</span>)</span><br><span class="line">b=float(<span class="string">'nan'</span>)</span><br><span class="line">c=<span class="number">1.0</span></span><br><span class="line">print(math.isnan(a))</span><br><span class="line">print(math.isinf(a))</span><br><span class="line">print(math.isnan(b))</span><br><span class="line">print(math.isinf(b))</span><br><span class="line">print(math.isnan(c))</span><br><span class="line">print(math.isinf(c))</span><br></pre></td></tr></table></figure></p><h1 id="使用numpy模块"><a href="#使用numpy模块" class="headerlink" title="使用numpy模块"></a>使用numpy模块</h1><p>代码如下:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a=float(<span class="string">'inf'</span>)</span><br><span class="line">b=float(<span class="string">'nan'</span>)</span><br><span class="line">c=<span class="number">1.0</span></span><br><span class="line">print(np.isnan(a))</span><br><span class="line">print(np.isinf(a))</span><br><span class="line">print(np.isnan(b))</span><br><span class="line">print(np.isinf(b))</span><br><span class="line">print(np.isnan(c))</span><br><span class="line">print(np.isinf(c))</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;一共有两种方法&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://yundantianchang.github.io/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://yundantianchang.github.io/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu使用wine运行windows软件</title>
@@ -71,13 +93,13 @@
     <link href="https://yundantianchang.github.io/blogs/2018/0915-1.html"/>
     <id>https://yundantianchang.github.io/blogs/2018/0915-1.html</id>
     <published>2018-09-15T08:01:43.000Z</published>
-    <updated>2018-09-15T08:01:43.000Z</updated>
+    <updated>2018-09-25T08:01:43.000Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="catia-创成式外形设计-常用命令作用"><a href="#catia-创成式外形设计-常用命令作用" class="headerlink" title="catia 创成式外形设计 常用命令作用"></a>catia 创成式外形设计 常用命令作用</h1><a id="more"></a><p>修复:可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适.<br>曲面简化:可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充.<br>封闭曲面:曲面转实体<br>添加:进行布尔和运算</p>]]></content>
+    <content type="html"><![CDATA[<p>catia 创成式外形设计 常用命令作用<br><a id="more"></a></p><h1 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h1><p>主要用于连接多个有缝曲面,也可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适.</p><h1 id="取消修剪曲面"><a href="#取消修剪曲面" class="headerlink" title="取消修剪曲面"></a>取消修剪曲面</h1><p>用于还原被修改或者分割的曲面,也可以用来补洞,但是补洞之前可能需要对曲面进行拆解操作.</p><h1 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h1><p>用于将一个曲面拆分为多个曲面</p><h1 id="曲面简化"><a href="#曲面简化" class="headerlink" title="曲面简化"></a>曲面简化</h1><p>可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充.</p><h1 id="封闭曲面"><a href="#封闭曲面" class="headerlink" title="封闭曲面"></a>封闭曲面</h1><p>曲面转实体</p><h1 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h1><p>进行布尔和运算</p>]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;catia-创成式外形设计-常用命令作用&quot;&gt;&lt;a href=&quot;#catia-创成式外形设计-常用命令作用&quot; class=&quot;headerlink&quot; title=&quot;catia 创成式外形设计 常用命令作用&quot;&gt;&lt;/a&gt;catia 创成式外形设计 常用命令作用&lt;/h1&gt;
+      &lt;p&gt;catia 创成式外形设计 常用命令作用&lt;br&gt;
     
     </summary>
     
@@ -104,9 +126,7 @@
     
     </summary>
     
-      <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
-    
-      <category term="bash" scheme="https://yundantianchang.github.io/categories/linux/bash/"/>
+      <category term="bash" scheme="https://yundantianchang.github.io/categories/bash/"/>
     
     
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
@@ -135,11 +155,11 @@
       <category term="icem" scheme="https://yundantianchang.github.io/categories/icem/"/>
     
     
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
       <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
       <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
-    
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
   </entry>
   
@@ -161,9 +181,9 @@
       <category term="fluent" scheme="https://yundantianchang.github.io/categories/fluent/"/>
     
     
-      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
-    
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
       <category term="fluent" scheme="https://yundantianchang.github.io/tags/fluent/"/>
     

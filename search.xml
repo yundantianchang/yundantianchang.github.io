@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[python判断数字是否是inf或者nan]]></title>
+    <url>%2Fblogs%2F2018%2F1001-1.html</url>
+    <content type="text"><![CDATA[一共有两种方法 使用math模块代码如下:12345678910import matha=float('inf')b=float('nan')c=1.0print(math.isnan(a))print(math.isinf(a))print(math.isnan(b))print(math.isinf(b))print(math.isnan(c))print(math.isinf(c)) 使用numpy模块代码如下:12345678910import numpy as npa=float('inf')b=float('nan')c=1.0print(np.isnan(a))print(np.isinf(a))print(np.isnan(b))print(np.isinf(b))print(np.isnan(c))print(np.isinf(c))]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[ubuntu使用wine运行windows软件]]></title>
     <url>%2Fblogs%2F2018%2F0921-1.html</url>
     <content type="text"><![CDATA[悄悄告诉你,ubuntu下是可以运行非常多的windows软件的. 现状ubuntu现在已经非常的好用,已经有比较多的国产软件支持ubuntu等linux操作系统,例如搜狗输入法,金山wps,网易云音乐等.但是对于qq,微信,百度云以及迅雷等,尚未有相应的linux版本. 解决方法核心方法为使用wine来直接安装windows下的一些软件.具体方法有: 方法1wine有一个比较好开源的界面:playonlinux,ubuntu官方源里面就有,可以直接安装1sudo apt install playonlinux 安装之后,打开playonlinux,可以自行安装非常多的windows软件,甚至包括office03,office07以及office2010等,个人测试,已经比较稳定. 方法2当然,也可以使用另外一个更加优秀的wine界面:crossover,但是该软件是收费软件,价格本身并不贵. 方法3使用deepin的移植版本,链接为:deepin-wine-ubuntu 或者 deepin-wine-ubuntu]]></content>
@@ -28,7 +39,7 @@
   <entry>
     <title><![CDATA[catia修图常用命令]]></title>
     <url>%2Fblogs%2F2018%2F0915-1.html</url>
-    <content type="text"><![CDATA[catia 创成式外形设计 常用命令作用 修复:可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适.曲面简化:可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充.封闭曲面:曲面转实体添加:进行布尔和运算]]></content>
+    <content type="text"><![CDATA[catia 创成式外形设计 常用命令作用 修复主要用于连接多个有缝曲面,也可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适. 取消修剪曲面用于还原被修改或者分割的曲面,也可以用来补洞,但是补洞之前可能需要对曲面进行拆解操作. 拆解用于将一个曲面拆分为多个曲面 曲面简化可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充. 封闭曲面曲面转实体 添加进行布尔和运算]]></content>
       <categories>
         <category>catia</category>
       </categories>
@@ -41,7 +52,6 @@
     <url>%2Fblogs%2F2018%2F0910-1.html</url>
     <content type="text"><![CDATA[转载自脚本之家 这篇文章主要介绍了Shell脚本8种字符串截取方法总结,每个方法给出了实例代码和操作结果,一目了然,需要的朋友可以参考下 Linux 的字符串截取很有用。有八种方法。 假设有变量 var=http://www.aaa.com/123.htm. # 号截取，删除左边字符，保留右边字符。代码如下:1echo $&#123;var#*//&#125; 其中 var 是变量名，# 号是运算符，*// 表示从左边开始删除第一个 // 号及左边的所有字符即删除 http://结果是 ：www.aaa.com/123.htm ## 号截取，删除左边字符，保留右边字符。代码如下:1echo $&#123;var##*/&#125; ##*/ 表示从左边开始删除最后（最右边）一个 / 号及左边的所有字符即删除 http://www.aaa.com/ 结果是 123.htm %号截取，删除右边字符，保留左边字符代码如下:1echo $&#123;var%/*&#125; %/* 表示从右边开始，删除第一个 / 号及右边的字符 结果是：http://www.aaa.com %% 号截取，删除右边字符，保留左边字符代码如下:1echo $&#123;var%%/*&#125; %%/* 表示从右边开始，删除最后（最左边）一个 / 号及右边的字符结果是：http: 从左边第几个字符开始，及字符的个数代码如下:1echo $&#123;var:0:5&#125; 其中的 0 表示左边第一个字符开始，5 表示字符的总个数。结果是：http: 从左边第几个字符开始，一直到结束。代码如下:1echo $&#123;var:7&#125; 其中的 7 表示左边第8个字符开始，一直到结束。结果是 ：www.aaa.com/123.htm 从右边第几个字符开始，及字符的个数代码如下:1echo $&#123;var:0-7:3&#125; 其中的 0-7 表示右边算起第七个字符开始，3 表示字符的个数。结果是：123 从右边第几个字符开始，一直到结束。代码如下:1echo $&#123;var:0-7&#125; 表示从右边第七个字符开始，一直到结束。结果是：123.htm 注：（左边的第一个字符是用 0 表示，右边的第一个字符用 0-1 表示）]]></content>
       <categories>
-        <category>linux</category>
         <category>bash</category>
       </categories>
       <tags>
@@ -58,9 +68,9 @@
         <category>icem</category>
       </categories>
       <tags>
+        <tag>ubuntu</tag>
         <tag>ansys</tag>
         <tag>icem</tag>
-        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>
@@ -71,8 +81,8 @@
         <category>fluent</category>
       </categories>
       <tags>
-        <tag>ansys</tag>
         <tag>ubuntu</tag>
+        <tag>ansys</tag>
         <tag>fluent</tag>
       </tags>
   </entry>
