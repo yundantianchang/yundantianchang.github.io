@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-01T01:54:20.702Z</updated>
+  <updated>2018-10-05T04:50:49.480Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux无线网卡选购指南</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1005-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1005-1.html</id>
+    <published>2018-10-05T04:13:56.000Z</published>
+    <updated>2018-10-05T04:50:49.480Z</updated>
+    
+    <content type="html"><![CDATA[<p>在网上随便买一个无线网卡,一般都会提供windows的无线网卡驱动,而linux驱动提供的比较少,而且一般不提供技术支持,因此在选购时需要慎重.<br><a id="more"></a></p><h1 id="获得芯片类型"><a href="#获得芯片类型" class="headerlink" title="获得芯片类型"></a>获得芯片类型</h1><p>无线网卡最重要的就是芯片,外观什么的并不影响系统对其识别,因此在购买网卡时一定要查询其芯片类型.例如对于我购买的comfast CF-WU810N 无线网卡,介绍页面显示其芯片类型为 RTL8188EUS.对于介绍页面没有的,可以咨询客服或者到<a href="https://wikidevi.com/wiki/Main_Page" target="_blank" rel="noopener">wikidevi</a> 网站查询,需要注意的是,网站上网卡信息并不全.</p><h1 id="查询内核支持情况"><a href="#查询内核支持情况" class="headerlink" title="查询内核支持情况"></a>查询内核支持情况</h1><p>获得芯片类型后,到<a href="http://linux-wless.passys.nl/" target="_blank" rel="noopener">passys</a> 网站查询linux内核对芯片支持情况.对于我的网卡RTL8188EUS,其内核支持情况为Some are supported(页面显示为黄色),说明内核对其有一定的支持.在ubuntu18.04上插上之后,系统可以直接识别,可以接收到wifi信号并连接,但是,无法创建AP,功能收到限制.</p><h1 id="寻找更好的驱动"><a href="#寻找更好的驱动" class="headerlink" title="寻找更好的驱动"></a>寻找更好的驱动</h1><p>在github上搜索了一下,获得了一些第三方的驱动<a href="https://github.com/lwfinger/rtl8188eu.git" target="_blank" rel="noopener">lwfinger</a> 和 <a href="https://github.com/quickreflex/rtl8188eus.git" target="_blank" rel="noopener">quickreflex</a>,对两种驱动都进行了安装,测试发现,lwfinger的驱动仍然无法创建ap,而quickreflex的驱动则可以完美创建ap(使用<a href="https://github.com/oblique/create_ap" target="_blank" rel="noopener">create_ap</a> ),问题解决.另外,也有一些其它的驱动,例如realtek官方提供的驱动(2013年的),其版本太老,无法编译(内核版本不支持).</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网上随便买一个无线网卡,一般都会提供windows的无线网卡驱动,而linux驱动提供的比较少,而且一般不提供技术支持,因此在选购时需要慎重.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="无线网卡" scheme="https://yundantianchang.github.io/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/"/>
+    
+      <category term="8188EU" scheme="https://yundantianchang.github.io/tags/8188EU/"/>
+    
+      <category term="8188EUS" scheme="https://yundantianchang.github.io/tags/8188EUS/"/>
+    
+      <category term="CF-WU810N" scheme="https://yundantianchang.github.io/tags/CF-WU810N/"/>
+    
+  </entry>
   
   <entry>
     <title>python判断数字是否是inf或者nan</title>
@@ -157,9 +187,9 @@
     
       <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
   </entry>
   
