@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[cfx常见问题解决办法]]></title>
+    <url>%2Fblogs%2F2018%2F1010-1.html</url>
+    <content type="text"><![CDATA[cfx计算过程中遇到的问题如何解决? 问题1错误描述The following objects have been referenced but not defined: SUBDOMAIN: Subdomain 1 ccl2flow: command language error Message: Undefined references Context: define_name_table 原因主要是因为在使用res文件续算时def文件网格与初始状态res网格计算域不匹配,对网格进行更改,保持计算域一致即可.需要注意的是,该问题通过gui运行时不会出现,但是在通过命令进行远程计算时会出现.解决方法参考cfd-online.]]></content>
+      <categories>
+        <category>cfx</category>
+      </categories>
+      <tags>
+        <tag>ansys</tag>
+        <tag>cfx</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[cfx在ubuntu平台配置]]></title>
+    <url>%2Fblogs%2F2018%2F1008-1.html</url>
+    <content type="text"><![CDATA[cfx在ubuntu上无法使用,该如何解决? 问题描述cfx5pre和cfx5post一般工作正常,但是cfx5solve在进行计算时会出现错误,具体提示为:1A ANSYS CFX &apos;double-ifort&apos; Partitioner executable is required for this run, but none is available. 解决方法ansys本身并没有对ubuntu系统进行适配,原因可能是函数库不匹配.解决方法为在运行cfx5solve之前更改一下环境变量1export LD_DEBUG=unused 然后再运行cfx5solve即可.需要注意的是cfx5pre和cfx5post不能有此环境变量,否则会出错. 适用范围系统为ubuntu16.04或者ubuntu18.04, ansys版本为15,16,17,18,19均可,其它未测试,以实际测试结果为准.]]></content>
+      <categories>
+        <category>cfx</category>
+      </categories>
+      <tags>
+        <tag>ansys</tag>
+        <tag>ubuntu</tag>
+        <tag>linux</tag>
+        <tag>cfx</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux无线网卡选购指南]]></title>
     <url>%2Fblogs%2F2018%2F1005-1.html</url>
     <content type="text"><![CDATA[在网上随便买一个无线网卡,一般都会提供windows的无线网卡驱动,而linux驱动提供的比较少,而且一般不提供技术支持,因此在选购时需要慎重. 获得芯片类型无线网卡最重要的就是芯片,外观什么的并不影响系统对其识别,因此在购买网卡时一定要查询其芯片类型.例如对于我购买的comfast CF-WU810N 无线网卡,介绍页面显示其芯片类型为 RTL8188EUS.对于介绍页面没有的,可以咨询客服或者到wikidevi 网站查询,需要注意的是,网站上网卡信息并不全. 查询内核支持情况获得芯片类型后,到passys 网站查询linux内核对芯片支持情况.对于我的网卡RTL8188EUS,其内核支持情况为Some are supported(页面显示为黄色),说明内核对其有一定的支持.在ubuntu18.04上插上之后,系统可以直接识别,可以接收到wifi信号并连接,但是,无法创建AP,功能收到限制. 寻找更好的驱动在github上搜索了一下,获得了一些第三方的驱动lwfinger 和 quickreflex,对两种驱动都进行了安装,测试发现,lwfinger的驱动仍然无法创建ap,而quickreflex的驱动则可以完美创建ap(使用create_ap ),问题解决.另外,也有一些其它的驱动,例如realtek官方提供的驱动(2013年的),其版本太老,无法编译(内核版本不支持).]]></content>

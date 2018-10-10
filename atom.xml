@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-05T04:50:49.480Z</updated>
+  <updated>2018-10-10T00:53:12.395Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>cfx常见问题解决办法</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1010-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1010-1.html</id>
+    <published>2018-10-10T00:16:35.000Z</published>
+    <updated>2018-10-10T00:53:12.395Z</updated>
+    
+    <content type="html"><![CDATA[<p>cfx计算过程中遇到的问题如何解决?<br><a id="more"></a></p><h1 id="问题1"><a href="#问题1" class="headerlink" title="问题1"></a>问题1</h1><h2 id="错误描述"><a href="#错误描述" class="headerlink" title="错误描述"></a>错误描述</h2><p>The following objects have been referenced but not defined:</p><p>SUBDOMAIN: Subdomain 1</p><p>ccl2flow: <em> command language error </em></p><p>Message: Undefined references</p><p>Context: define_name_table</p><h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>主要是因为在使用res文件续算时def文件网格与初始状态res网格计算域不匹配,对网格进行更改,保持计算域一致即可.需要注意的是,该问题通过gui运行时不会出现,但是在通过命令进行远程计算时会出现.解决方法参考<a href="https://www.cfd-online.com/Forums/cfx/21497-how-calculate-mass-recirculation.html" target="_blank" rel="noopener">cfd-online.</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;cfx计算过程中遇到的问题如何解决?&lt;br&gt;
+    
+    </summary>
+    
+      <category term="cfx" scheme="https://yundantianchang.github.io/categories/cfx/"/>
+    
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
+    
+      <category term="cfx" scheme="https://yundantianchang.github.io/tags/cfx/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>cfx在ubuntu平台配置</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1008-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1008-1.html</id>
+    <published>2018-10-08T00:25:13.000Z</published>
+    <updated>2018-10-10T00:47:19.322Z</updated>
+    
+    <content type="html"><![CDATA[<p>cfx在ubuntu上无法使用,该如何解决?<br><a id="more"></a></p><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>cfx5pre和cfx5post一般工作正常,但是cfx5solve在进行计算时会出现错误,具体提示为:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A ANSYS CFX &apos;double-ifort&apos; Partitioner executable is required for this run, but none is available.</span><br></pre></td></tr></table></figure></p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>ansys本身并没有对ubuntu系统进行适配,原因可能是函数库不匹配.解决方法为在运行cfx5solve之前更改一下环境变量<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> LD_DEBUG=unused</span><br></pre></td></tr></table></figure></p><p>然后再运行cfx5solve即可.需要注意的是cfx5pre和cfx5post不能有此环境变量,否则会出错.</p><h1 id="适用范围"><a href="#适用范围" class="headerlink" title="适用范围"></a>适用范围</h1><p>系统为ubuntu16.04或者ubuntu18.04, ansys版本为15,16,17,18,19均可,其它未测试,以实际测试结果为准.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;cfx在ubuntu上无法使用,该如何解决?&lt;br&gt;
+    
+    </summary>
+    
+      <category term="cfx" scheme="https://yundantianchang.github.io/categories/cfx/"/>
+    
+    
+      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="cfx" scheme="https://yundantianchang.github.io/tags/cfx/"/>
+    
+  </entry>
   
   <entry>
     <title>linux无线网卡选购指南</title>
