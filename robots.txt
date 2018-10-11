@@ -11,6 +11,7 @@ Disallow: /images/
 Disallow: /js/
 Disallow: /lib/
 Disallow: /static/
+Disallow: /self/
 
 Sitemap: https://yundantianchang.github.io/sitemap.xml
 Sitemap: https://yundantianchang.github.io/baidusitemap.xml

@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[linux edac error]]></title>
+    <url>%2Fblogs%2F2018%2F1011-1.html</url>
+    <content type="text"><![CDATA[计算机突然之间算的非常慢,原因何在? 问题描述计算机突然之间算的非常慢,终端提示1EDAC sbridge: Lost **** memory errors 注意,这里**表示数字 解决方法找到有问题的内存,拔下来清理,然后重新插上即可,计算机恢复正常速度. 参考解决方法参考开源中国]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>edac</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[shell字符串操作]]></title>
+    <url>%2Fblogs%2F2018%2F1010-2.html</url>
+    <content type="text"><![CDATA[判断读取字符串值表达式 含义 ${var} 变量var的值, 与$var相同 ${var-DEFAULT} 如果var没有被声明, 那么就以$DEFAULT作为其值 * ${var:-DEFAULT} 如果var没有被声明, 或者其值为空, 那么就以$DEFAULT作为其值 * ${var=DEFAULT} 如果var没有被声明, 那么就以$DEFAULT作为其值 * ${var:=DEFAULT} 如果var没有被声明, 或者其值为空, 那么就以$DEFAULT作为其值 * ${var+OTHER} 如果var声明了, 那么其值就是$OTHER, 否则就为null字符串 ${var:+OTHER} 如果var被设置了, 那么其值就是$OTHER, 否则就为null字符串 ${var?ERR_MSG} 如果var没被声明, 那么就打印$ERR_MSG * ${var:?ERR_MSG} 如果var没被设置, 那么就打印$ERR_MSG * ${!varprefix*} 匹配之前所有以varprefix开头进行声明的变量 ${!varprefix@} 匹配之前所有以varprefix开头进行声明的变量 字符串操作（长度，读取，替换）表达式 含义 ${#string} $string的长度 ${string:position} 在$string中, 从位置$position开始提取子串 ${string:position:length} 在$string中, 从位置$position开始提取长度为$length的子串 ${string#substring} 从变量$string的开头, 删除最短匹配$substring的子串 ${string##substring} 从变量$string的开头, 删除最长匹配$substring的子串 ${string%substring} 从变量$string的结尾, 删除最短匹配$substring的子串 ${string%%substring} 从变量$string的结尾, 删除最长匹配$substring的子串 ${string/substring/replacement} 使用$replacement, 来代替第一个匹配的$substring ${string//substring/replacement} 使用$replacement, 代替所有匹配的$substring ${string/#substring/replacement} 如果$string的前缀匹配$substring, 那么就用$replacement来代替匹配到的$substring ${string/%substring/replacement} 如果$string的后缀匹配$substring, 那么就用$replacement来代替匹配到的$substring 参考本文参考cnblogs]]></content>
+      <categories>
+        <category>shell</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[cfx常见问题解决办法]]></title>
     <url>%2Fblogs%2F2018%2F1010-1.html</url>
     <content type="text"><![CDATA[cfx计算过程中遇到的问题如何解决? 问题1错误描述The following objects have been referenced but not defined: SUBDOMAIN: Subdomain 1 ccl2flow: command language error Message: Undefined references Context: define_name_table 原因主要是因为在使用res文件续算时def文件网格与初始状态res网格计算域不匹配,对网格进行更改,保持计算域一致即可.需要注意的是,该问题通过gui运行时不会出现,但是在通过命令进行远程计算时会出现.解决方法参考cfd-online.]]></content>
@@ -108,8 +132,8 @@
       </categories>
       <tags>
         <tag>ansys</tag>
-        <tag>icem</tag>
         <tag>ubuntu</tag>
+        <tag>icem</tag>
       </tags>
   </entry>
   <entry>
