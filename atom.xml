@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-11T09:25:55.972Z</updated>
+  <updated>2018-10-12T01:15:06.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wine 迅雷左上角置顶窗口处理</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1012-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1012-1.html</id>
+    <published>2018-10-12T01:15:06.000Z</published>
+    <updated>2018-10-12T01:15:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<a id="more"></a><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>迅雷极速版可以比较完美的在wine上运行,功能基本正常,但是在启动迅雷后,桌面左上角有一个置顶的窗口,无法编辑,也无法移动位置,影响查看其它程序窗口.在这个置顶的窗口下,还有一个比较小的黑窗口,这个可以移动位置.</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>原因不详,但是可以通过隐藏这些窗口来使得桌面环境更加美观</p><h2 id="查看当前显示的所有窗口"><a href="#查看当前显示的所有窗口" class="headerlink" title="查看当前显示的所有窗口"></a>查看当前显示的所有窗口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmctrl wmctrl -l -G -p -x</span><br></pre></td></tr></table></figure><p>在我的计算机上输出结果为(输出结果有删减,去掉了其它窗口,主机名用<strong>***</strong>代替)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0x0380000f  0 10292  755  138  983  665  thunder.exe.Wine      ******* 迅雷极速版</span><br><span class="line">0x0380001e  0 10292  0    0    306  240  thunder.exe.Wine      ******* </span><br><span class="line">0x03800020  0 10292  2340 1144 196  196  thunder.exe.Wine      ******* </span><br><span class="line">0x0380002a  0 10292  0    0    116  27   thunder.exe.Wine      *******</span><br></pre></td></tr></table></figure></p><p>输出格式为第1列窗口id,第3列为进程pid,第4列和第5列为窗口的左上角坐标位置,最后一列为窗口标题</p><h2 id="找到迅雷的窗口id"><a href="#找到迅雷的窗口id" class="headerlink" title="找到迅雷的窗口id"></a>找到迅雷的窗口id</h2><p>具体方法为:</p><ul><li>根据窗口标题找到”迅雷极速版”,其进程pid为10292</li><li>根据进程id和左上角坐标位置,找到坐标都是0的,获得窗口id,即0x0380001e 和 0x0380002a </li></ul><h2 id="取消置顶或者隐藏"><a href="#取消置顶或者隐藏" class="headerlink" title="取消置顶或者隐藏"></a>取消置顶或者隐藏</h2><h3 id="隐藏方法-使用xdotool命令-注意窗口id要对应更改"><a href="#隐藏方法-使用xdotool命令-注意窗口id要对应更改" class="headerlink" title="隐藏方法,使用xdotool命令,注意窗口id要对应更改"></a>隐藏方法,使用xdotool命令,注意窗口id要对应更改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xdotool windowunmap 0x0380001e</span><br><span class="line">xdotool windowunmap 0x0380002a</span><br></pre></td></tr></table></figure><h3 id="取消置顶方法-注意窗口id要对应更改"><a href="#取消置顶方法-注意窗口id要对应更改" class="headerlink" title="取消置顶方法,注意窗口id要对应更改"></a>取消置顶方法,注意窗口id要对应更改</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">wmctrl -i -r 0x0380001e -b remove,above</span><br><span class="line">wmctrl -i -r 0x0380002a -b remove,above</span><br></pre></td></tr></table></figure><p>推荐使用隐藏方法,该方法可以让讨厌的窗口彻底消失.</p><h1 id="福利-一键脚本"><a href="#福利-一键脚本" class="headerlink" title="福利:一键脚本"></a>福利:一键脚本</h1><p>项目主页<a href="https://github.com/yundantianchang/wmctrl" target="_blank" rel="noopener">wmctrl</a> /example目录有一些示例文件,<a href="https://github.com/yundantianchang/wmctrl/blob/master/example/hide-window.py" target="_blank" rel="noopener">hide-window.py</a> 可以用于隐藏窗口,而<a href="https://github.com/yundantianchang/wmctrl/blob/master/example/remove-top-window.py" target="_blank" rel="noopener">remove-top-window.py</a> 则可以取消置顶并最小化窗口.</p>]]></content>
+    
+    <summary type="html">
+    
+      让迅雷更好地在wine上运行
+    
+    </summary>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
+    
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="迅雷" scheme="https://yundantianchang.github.io/tags/%E8%BF%85%E9%9B%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>linux edac error</title>

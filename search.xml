@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[wine 迅雷左上角置顶窗口处理]]></title>
+    <url>%2Fblogs%2F2018%2F1012-1.html</url>
+    <content type="text"><![CDATA[问题描述迅雷极速版可以比较完美的在wine上运行,功能基本正常,但是在启动迅雷后,桌面左上角有一个置顶的窗口,无法编辑,也无法移动位置,影响查看其它程序窗口.在这个置顶的窗口下,还有一个比较小的黑窗口,这个可以移动位置. 解决方法原因不详,但是可以通过隐藏这些窗口来使得桌面环境更加美观 查看当前显示的所有窗口1wmctrl wmctrl -l -G -p -x 在我的计算机上输出结果为(输出结果有删减,去掉了其它窗口,主机名用***代替)12340x0380000f 0 10292 755 138 983 665 thunder.exe.Wine ******* 迅雷极速版0x0380001e 0 10292 0 0 306 240 thunder.exe.Wine ******* 0x03800020 0 10292 2340 1144 196 196 thunder.exe.Wine ******* 0x0380002a 0 10292 0 0 116 27 thunder.exe.Wine ******* 输出格式为第1列窗口id,第3列为进程pid,第4列和第5列为窗口的左上角坐标位置,最后一列为窗口标题 找到迅雷的窗口id具体方法为: 根据窗口标题找到”迅雷极速版”,其进程pid为10292 根据进程id和左上角坐标位置,找到坐标都是0的,获得窗口id,即0x0380001e 和 0x0380002a 取消置顶或者隐藏隐藏方法,使用xdotool命令,注意窗口id要对应更改12xdotool windowunmap 0x0380001exdotool windowunmap 0x0380002a 取消置顶方法,注意窗口id要对应更改12wmctrl -i -r 0x0380001e -b remove,abovewmctrl -i -r 0x0380002a -b remove,above 推荐使用隐藏方法,该方法可以让讨厌的窗口彻底消失. 福利:一键脚本项目主页wmctrl /example目录有一些示例文件,hide-window.py 可以用于隐藏窗口,而remove-top-window.py 则可以取消置顶并最小化窗口.]]></content>
+      <categories>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>wine</tag>
+        <tag>linux</tag>
+        <tag>迅雷</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[linux edac error]]></title>
     <url>%2Fblogs%2F2018%2F1011-1.html</url>
     <content type="text"><![CDATA[计算机突然之间算的非常慢,原因何在? 问题描述计算机突然之间算的非常慢,终端提示1EDAC sbridge: Lost **** memory errors 注意,这里**表示数字 解决方法找到有问题的内存,拔下来清理,然后重新插上即可,计算机恢复正常速度. 参考解决方法参考开源中国]]></content>
