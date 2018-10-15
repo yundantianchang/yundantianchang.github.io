@@ -31,8 +31,10 @@
     
     </summary>
     
-      <category term="微信" scheme="https://yundantianchang.github.io/categories/%E5%BE%AE%E4%BF%A1/"/>
+      <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
     
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
     
@@ -69,6 +71,8 @@
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
       <category term="迅雷" scheme="https://yundantianchang.github.io/tags/%E8%BF%85%E9%9B%B7/"/>
+    
+      <category term="thunder" scheme="https://yundantianchang.github.io/tags/thunder/"/>
     
   </entry>
   

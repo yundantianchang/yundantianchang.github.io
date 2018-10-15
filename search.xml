@@ -5,9 +5,10 @@
     <url>%2Fblogs%2F2018%2F1015-1.html</url>
     <content type="text"><![CDATA[wine 微信基本可以完美的运行,但是有一些小瑕疵,例如登陆后在屏幕中间会有一个小黑框,非常的不好看.该怎么处理呢? 具体思路与迅雷 方法一致,直接将讨厌的窗口隐藏即可. 查看讨厌的窗口信息1wmctrl -l -G -p -x 输出为(有删减)1230x0440000a 0 31674 300 300 1 1 wechat.exe.Wine ****** ChatContactMenu0x0440000c 0 31674 400 400 60 60 wechat.exe.Wine ******0x04400009 0 31674 640 750 1116 518 wechat.exe.Wine ****** 微信 处理窗口0x04400009为正常微信窗口,而另外两个则无用,为有bug的窗口.将其隐藏掉,12xdotool windowunmap 0x0440000axdotool windowunmap 0x0440000c 一键脚本项目主页wmctrl 提供的一键脚本wechat-fix.py 可以一步到位解决这个问题.]]></content>
       <categories>
-        <category>微信</category>
+        <category>linux</category>
       </categories>
       <tags>
+        <tag>ubuntu</tag>
         <tag>linux</tag>
         <tag>wine</tag>
         <tag>wechat</tag>
@@ -26,6 +27,7 @@
         <tag>linux</tag>
         <tag>wine</tag>
         <tag>迅雷</tag>
+        <tag>thunder</tag>
       </tags>
   </entry>
   <entry>
