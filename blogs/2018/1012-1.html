@@ -109,7 +109,7 @@
 
 
   <meta name="description" content="让迅雷更好地在wine上运行">
-<meta name="keywords" content="ubuntu,wine,linux,迅雷">
+<meta name="keywords" content="ubuntu,linux,wine,迅雷">
 <meta property="og:type" content="article">
 <meta property="og:title" content="wine 迅雷左上角置顶窗口处理">
 <meta property="og:url" content="https://yundantianchang.github.io/blogs/2018/1012-1.html">
@@ -434,7 +434,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">992</span>
+                <span title="本文字数">985</span>
               
 
               
@@ -473,7 +473,7 @@
         <a id="more"></a>
 <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>迅雷极速版可以比较完美的在wine上运行,功能基本正常,但是在启动迅雷后,桌面左上角有一个置顶的窗口,无法编辑,也无法移动位置,影响查看其它程序窗口.在这个置顶的窗口下,还有一个比较小的黑窗口,这个可以移动位置.</p>
 <h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>原因不详,但是可以通过隐藏这些窗口来使得桌面环境更加美观</p>
-<h2 id="查看当前显示的所有窗口"><a href="#查看当前显示的所有窗口" class="headerlink" title="查看当前显示的所有窗口"></a>查看当前显示的所有窗口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmctrl wmctrl -l -G -p -x</span><br></pre></td></tr></table></figure>
+<h2 id="查看当前显示的所有窗口"><a href="#查看当前显示的所有窗口" class="headerlink" title="查看当前显示的所有窗口"></a>查看当前显示的所有窗口</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wmctrl -l -G -p -x</span><br></pre></td></tr></table></figure>
 <p>在我的计算机上输出结果为(输出结果有删减,去掉了其它窗口,主机名用<strong>***</strong>代替)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">0x0380000f  0 10292  755  138  983  665  thunder.exe.Wine      ******* 迅雷极速版</span><br><span class="line">0x0380001e  0 10292  0    0    306  240  thunder.exe.Wine      ******* </span><br><span class="line">0x03800020  0 10292  2340 1144 196  196  thunder.exe.Wine      ******* </span><br><span class="line">0x0380002a  0 10292  0    0    116  27   thunder.exe.Wine      *******</span><br></pre></td></tr></table></figure></p>
 <p>输出格式为第1列窗口id,第3列为进程pid,第4列和第5列为窗口的左上角坐标位置,最后一列为窗口标题</p>
 <h2 id="找到迅雷的窗口id"><a href="#找到迅雷的窗口id" class="headerlink" title="找到迅雷的窗口id"></a>找到迅雷的窗口id</h2><p>具体方法为:</p>
@@ -521,9 +521,9 @@
           
             <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
           
-            <a href="/tags/wine/" rel="tag"># wine</a>
-          
             <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/wine/" rel="tag"># wine</a>
           
             <a href="/tags/迅雷/" rel="tag"># 迅雷</a>
           
@@ -547,6 +547,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blogs/2018/1015-1.html" rel="prev" title="wine 微信小黑框处理">
+                wine 微信小黑框处理 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -636,7 +640,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">14</span>
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -667,7 +671,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -722,7 +728,11 @@
                     
                       
                     
-                    <span class="site-state-item-count">21</span>
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
