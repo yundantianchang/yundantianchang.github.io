@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[endnote 技巧]]></title>
+    <url>%2Fblogs%2F2018%2F1021-1.html</url>
+    <content type="text"><![CDATA[endnote参考文献添加超链接具体步骤为: 点击Word菜单endnote选项卡 点击edit&amp; manage citations,打开对话框 点击tools列表框下configure bibliography 这个地方可以设置参考文献超链接以及是否在序号下添加下划线 添加之后更新一下就可以通过ctrl+单击序号跳转到参考文献列表了.]]></content>
+      <categories>
+        <category>endnote</category>
+      </categories>
+      <tags>
+        <tag>word</tag>
+        <tag>endnote</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[word 交叉引用题注缺失]]></title>
     <url>%2Fblogs%2F2018%2F1018-1.html</url>
     <content type="text"><![CDATA[问题描述 word 引用-交叉引用对话框中”引用哪一个题注”列表项目缺失 原因原因为启用了审阅,部分修改没有办法体现出来. 解决方法word菜单栏:审阅-接受-接受所有更改,随后关闭审阅即可,如果还不行,那就更新文章域.更新域方法参见博客 参考参考yaycici 文章]]></content>
@@ -138,8 +150,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>wine</tag>
         <tag>windows</tag>
+        <tag>wine</tag>
       </tags>
   </entry>
   <entry>
@@ -187,8 +199,8 @@
       </categories>
       <tags>
         <tag>ansys</tag>
-        <tag>icem</tag>
         <tag>ubuntu</tag>
+        <tag>icem</tag>
       </tags>
   </entry>
   <entry>
