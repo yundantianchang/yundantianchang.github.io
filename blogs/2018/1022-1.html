@@ -108,18 +108,15 @@
 
 
 
-  <meta name="description" content="计算机突然之间算的非常慢,原因何在?">
-<meta name="keywords" content="linux,edac">
+  <meta name="keywords" content="linux,ubuntu,windows,ansys,fluent,icem,cfx">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux edac error">
-<meta property="og:url" content="https://yundantianchang.github.io/blogs/2018/1011-1.html">
+<meta property="og:title" content="vmware虚拟主机与物理主机共享文件方法">
+<meta property="og:url" content="https://yundantianchang.github.io/blogs/2018/1022-1.html">
 <meta property="og:site_name" content="云淡天长&#39;s blog">
-<meta property="og:description" content="计算机突然之间算的非常慢,原因何在?">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-10-11T09:25:55.972Z">
+<meta property="og:updated_time" content="2018-10-22T14:16:24.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux edac error">
-<meta name="twitter:description" content="计算机突然之间算的非常慢,原因何在?">
+<meta name="twitter:title" content="vmware虚拟主机与物理主机共享文件方法">
 
 
 
@@ -128,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://yundantianchang.github.io/blogs/2018/1011-1.html"/>
+  <link rel="canonical" href="https://yundantianchang.github.io/blogs/2018/1022-1.html"/>
 
 
 
@@ -138,7 +135,7 @@
   };
 </script>
 
-  <title>linux edac error | 云淡天长's blog</title>
+  <title>vmware虚拟主机与物理主机共享文件方法 | 云淡天长's blog</title>
   
 
 
@@ -338,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yundantianchang.github.io/blogs/2018/1011-1.html">
+    <link itemprop="mainEntityOfPage" href="https://yundantianchang.github.io/blogs/2018/1022-1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云淡天长">
@@ -355,7 +352,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">linux edac error
+          <h2 class="post-title" itemprop="name headline">vmware虚拟主机与物理主机共享文件方法
               
             
           </h2>
@@ -380,34 +377,12 @@
                 
               
 
-              <time title="创建时间：2018-10-11 17:07:18 / 修改时间：17:25:55" itemprop="dateCreated datePublished" datetime="2018-10-11T17:07:18+08:00">2018-10-11</time>
+              <time title="创建时间：2018-10-22 22:16:24" itemprop="dateCreated datePublished" datetime="2018-10-22T22:16:24+08:00">2018-10-22</time>
             
 
-            
-              
-
-              
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/linux/" itemprop="url" rel="index"><span itemprop="name">linux</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -438,7 +413,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">145</span>
+                <span title="本文字数">253</span>
               
 
               
@@ -472,12 +447,13 @@
       
 
       
-        <p>计算机突然之间算的非常慢,原因何在?</p>
+        <!--keywords: -->
+<!--posthide: false-->
+<!--archivehide: false-->
 <a id="more"></a>
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>计算机突然之间算的非常慢,终端提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">EDAC sbridge: Lost **** memory errors</span><br></pre></td></tr></table></figure></p>
-<p>注意,这里<em>**</em>表示数字</p>
-<h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>找到有问题的内存,拔下来清理,然后重新插上即可,计算机恢复正常速度.</p>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>解决方法参考<a href="https://my.oschina.net/whoareyou/blog/850456" target="_blank" rel="noopener">开源中国</a> </p>
+<p>方法比较多,归纳起来可以分为两大类</p>
+<h1 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h1><p>使用vmware自身提供的方法,缺点为需要安装vmware tools,需要操作系统支持.优点为操作简单,只需点点点.</p>
+<h1 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h1><p>原理为物理主机和虚拟主机通过网络进行通信,可以通过桥接或者nat共享.例如物理主机可以开启samba共享目录,虚拟主机就可以进行访问,也可以通过http,ftp甚至nfs.优点为不受操作系统限制,只要系统支持网络连接,两台主机之间就可以进行通信.缺点为需要操作人员懂得相关网络知识.优点为具有最大的自由度,爱怎么共享就怎么共享.</p>
 
       
     </div>
@@ -499,7 +475,7 @@
     <strong>本文作者： </strong>云淡天长</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://yundantianchang.github.io/blogs/2018/1011-1.html" title="linux edac error">https://yundantianchang.github.io/blogs/2018/1011-1.html</a>
+    <a href="https://yundantianchang.github.io/blogs/2018/1022-1.html" title="vmware虚拟主机与物理主机共享文件方法">https://yundantianchang.github.io/blogs/2018/1022-1.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -510,14 +486,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/linux/" rel="tag"># linux</a>
-          
-            <a href="/tags/edac/" rel="tag"># edac</a>
-          
-        </div>
-      
 
       
       
@@ -527,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blogs/2018/1010-2.html" rel="next" title="shell字符串操作">
-                <i class="fa fa-chevron-left"></i> shell字符串操作
+              <a href="/blogs/2018/1021-1.html" rel="next" title="endnote 技巧">
+                <i class="fa fa-chevron-left"></i> endnote 技巧
               </a>
             
           </div>
@@ -536,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blogs/2018/1012-1.html" rel="prev" title="wine 迅雷左上角置顶窗口处理">
-                wine 迅雷左上角置顶窗口处理 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -788,7 +752,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方法"><span class="nav-number">2.</span> <span class="nav-text">解决方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#方法1"><span class="nav-number">1.</span> <span class="nav-text">方法1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法2"><span class="nav-number">2.</span> <span class="nav-text">方法2</span></a></li></ol></div>
             
 
           </div>

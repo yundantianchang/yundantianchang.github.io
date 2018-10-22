@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[vmware虚拟主机与物理主机共享文件方法]]></title>
+    <url>%2Fblogs%2F2018%2F1022-1.html</url>
+    <content type="text"><![CDATA[方法比较多,归纳起来可以分为两大类 方法1使用vmware自身提供的方法,缺点为需要安装vmware tools,需要操作系统支持.优点为操作简单,只需点点点. 方法2原理为物理主机和虚拟主机通过网络进行通信,可以通过桥接或者nat共享.例如物理主机可以开启samba共享目录,虚拟主机就可以进行访问,也可以通过http,ftp甚至nfs.优点为不受操作系统限制,只要系统支持网络连接,两台主机之间就可以进行通信.缺点为需要操作人员懂得相关网络知识.优点为具有最大的自由度,爱怎么共享就怎么共享.]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[endnote 技巧]]></title>
     <url>%2Fblogs%2F2018%2F1021-1.html</url>
     <content type="text"><![CDATA[endnote参考文献添加超链接具体步骤为: 点击Word菜单endnote选项卡 点击edit&amp; manage citations,打开对话框 点击tools列表框下configure bibliography 这个地方可以设置参考文献超链接以及是否在序号下添加下划线 添加之后更新一下就可以通过ctrl+单击序号跳转到参考文献列表了.]]></content>
@@ -199,8 +204,8 @@
       </categories>
       <tags>
         <tag>ansys</tag>
-        <tag>ubuntu</tag>
         <tag>icem</tag>
+        <tag>ubuntu</tag>
       </tags>
   </entry>
   <entry>

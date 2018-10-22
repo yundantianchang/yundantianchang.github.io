@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-21T05:16:56.000Z</updated>
+  <updated>2018-10-22T14:16:24.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vmware虚拟主机与物理主机共享文件方法</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1022-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1022-1.html</id>
+    <published>2018-10-22T14:16:24.000Z</published>
+    <updated>2018-10-22T14:16:24.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><a id="more"></a><p>方法比较多,归纳起来可以分为两大类</p><h1 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h1><p>使用vmware自身提供的方法,缺点为需要安装vmware tools,需要操作系统支持.优点为操作简单,只需点点点.</p><h1 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h1><p>原理为物理主机和虚拟主机通过网络进行通信,可以通过桥接或者nat共享.例如物理主机可以开启samba共享目录,虚拟主机就可以进行访问,也可以通过http,ftp甚至nfs.优点为不受操作系统限制,只要系统支持网络连接,两台主机之间就可以进行通信.缺点为需要操作人员懂得相关网络知识.优点为具有最大的自由度,爱怎么共享就怎么共享.</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>endnote 技巧</title>
@@ -428,9 +448,9 @@
     
       <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
   </entry>
   
