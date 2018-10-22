@@ -4,6 +4,12 @@
     <title><![CDATA[vmware虚拟主机与物理主机共享文件方法]]></title>
     <url>%2Fblogs%2F2018%2F1022-1.html</url>
     <content type="text"><![CDATA[方法比较多,归纳起来可以分为两大类 方法1使用vmware自身提供的方法,缺点为需要安装vmware tools,需要操作系统支持.优点为操作简单,只需点点点. 方法2原理为物理主机和虚拟主机通过网络进行通信,可以通过桥接或者nat共享.例如物理主机可以开启samba共享目录,虚拟主机就可以进行访问,也可以通过http,ftp甚至nfs.优点为不受操作系统限制,只要系统支持网络连接,两台主机之间就可以进行通信.缺点为需要操作人员懂得相关网络知识.优点为具有最大的自由度,爱怎么共享就怎么共享.]]></content>
+      <categories>
+        <category>vmware</category>
+      </categories>
+      <tags>
+        <tag>vmware</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[endnote 技巧]]></title>
