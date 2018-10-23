@@ -108,18 +108,15 @@
 
 
 
-  <meta name="description" content="问题描述fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.">
-<meta name="keywords" content="ansys,fluent,ubuntu">
+  <meta name="keywords" content="linux,bash,shell">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fluent在ubuntu平台安装配置教程">
-<meta property="og:url" content="https://yundantianchang.github.io/blogs/2018/0905-1.html">
+<meta property="og:title" content="bash here document">
+<meta property="og:url" content="https://yundantianchang.github.io/blogs/2018/1023-2.html">
 <meta property="og:site_name" content="云淡天长&#39;s blog">
-<meta property="og:description" content="问题描述fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-09-05T06:22:37.000Z">
+<meta property="og:updated_time" content="2018-10-23T06:35:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="fluent在ubuntu平台安装配置教程">
-<meta name="twitter:description" content="问题描述fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.">
+<meta name="twitter:title" content="bash here document">
 
 
 
@@ -128,7 +125,7 @@
 
 
 
-  <link rel="canonical" href="https://yundantianchang.github.io/blogs/2018/0905-1.html"/>
+  <link rel="canonical" href="https://yundantianchang.github.io/blogs/2018/1023-2.html"/>
 
 
 
@@ -138,7 +135,7 @@
   };
 </script>
 
-  <title>fluent在ubuntu平台安装配置教程 | 云淡天长's blog</title>
+  <title>bash here document | 云淡天长's blog</title>
   
 
 
@@ -338,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://yundantianchang.github.io/blogs/2018/0905-1.html">
+    <link itemprop="mainEntityOfPage" href="https://yundantianchang.github.io/blogs/2018/1023-2.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="云淡天长">
@@ -355,7 +352,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">fluent在ubuntu平台安装配置教程
+          <h2 class="post-title" itemprop="name headline">bash here document
               
             
           </h2>
@@ -380,7 +377,7 @@
                 
               
 
-              <time title="创建时间：2018-09-05 14:22:37" itemprop="dateCreated datePublished" datetime="2018-09-05T14:22:37+08:00">2018-09-05</time>
+              <time title="创建时间：2018-10-23 14:35:41" itemprop="dateCreated datePublished" datetime="2018-10-23T14:35:41+08:00">2018-10-23</time>
             
 
             
@@ -398,7 +395,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/fluent/" itemprop="url" rel="index"><span itemprop="name">fluent</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/bash/" itemprop="url" rel="index"><span itemprop="name">bash</span></a></span>
 
                 
                 
@@ -434,7 +431,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">325</span>
+                <span title="本文字数">1.5k</span>
               
 
               
@@ -468,11 +465,28 @@
       
 
       
-        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>fluent在ubuntu上安装之后,串行计算一般没有问题,但是进行并行计算时,界面可以正常启动,但是会出现unexpected operator等错误,导致无法进行并行计算.<br><a id="more"></a></p>
-<h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>ubuntu 为了加快运行速度,使用dash取代bash作为系统默认shell,路径为/bin/sh,而dash不支持某些运算符,导致fluent启动失败.</p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>使用bash作为系统默认shell,方法为打开终端,运行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure dash</span><br></pre></td></tr></table></figure></p>
-<p>选择no,即可.</p>
-<h1 id="适用条件"><a href="#适用条件" class="headerlink" title="适用条件"></a>适用条件</h1><p>操作系统为ubuntu16.04,ubuntu18.04,ansys版本为14.5,15,16,17,18,19均可以.其它没有经过测试,以实际测试为准.</p>
+        <!--keywords: -->
+<!--posthide: false-->
+<!--archivehide: false-->
+<a id="more"></a>
+<h1 id="什么是Here-Document"><a href="#什么是Here-Document" class="headerlink" title="什么是Here Document"></a>什么是Here Document</h1><p>Here Document 是在Linux Shell 中的一种特殊的重定向方式，它的基本的形式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd &lt;&lt; delimiter</span><br><span class="line">  Here Document Content</span><br><span class="line">delimiter</span><br></pre></td></tr></table></figure></p>
+<p>它的作用就是将两个 delimiter 之间的内容(Here Document Content 部分) 传递给cmd 作为输入参数。</p>
+<p>比如在终端中输入cat &lt;&lt; EOF ，系统会提示继续进行输入，输入多行信息再输入EOF，中间输入的信息将会显示在屏幕上。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fish@mangos:~$ cat &lt;&lt; EOF</span><br><span class="line">&gt; First Line</span><br><span class="line">&gt; Second Line</span><br><span class="line">&gt; Third Line EOF</span><br><span class="line">&gt; EOF</span><br><span class="line">First Line</span><br><span class="line">Second Line</span><br><span class="line">Third Line EOF</span><br></pre></td></tr></table></figure></p>
+<p>注： &gt;这个符号是终端产生的提示输入信息的标识符</p>
+<p>这里要注意几点</p>
+<pre><code>EOF 只是一个标识而已，可以替换成任意的合法字符
+作为结尾的delimiter一定要顶格写，前面不能有任何字符
+作为结尾的delimiter后面也不能有任何的字符（包括空格）
+作为起始的delimiter前后的空格会被省略掉
+</code></pre><p>Here Document 不仅可以在终端上使用，在shell 文件中也可以使用，例如下面的here.sh 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt; output.sh</span><br><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<p>使用 sh here.sh 运行这个脚本文件，会得到output.sh 这个新文件，里面的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br></pre></td></tr></table></figure></p>
+<h1 id="Here-Document的变形"><a href="#Here-Document的变形" class="headerlink" title="Here Document的变形"></a>Here Document的变形</h1><h2 id="展开变量"><a href="#展开变量" class="headerlink" title="展开变量"></a>展开变量</h2><p>在Here Document 的内容中，不仅可以包括普通的字符，还可以在里面使用变量，例如将上面的here.sh 改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt; output.sh</span><br><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo $1</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<p>使用sh here.sh HereDocument 运行脚本得到output.sh的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo HereDocument</span><br></pre></td></tr></table></figure></p>
+<p>在这里 $1 被展开成为了脚本的参数 HereDocument</p>
+<h2 id="不展开变量"><a href="#不展开变量" class="headerlink" title="不展开变量"></a>不展开变量</h2><p>但是有时候不想展开这个变量怎么办呢，可以通过在起始的 delimiter的前后添加 “ 来实现，例如将上面的here.sh 改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; &quot;EOF&quot; &gt; output.sh  #注意引号</span><br><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p>
+<p>得到的output.sh 的内容为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo $1</span><br></pre></td></tr></table></figure></p>
+<h2 id="tab-处理"><a href="#tab-处理" class="headerlink" title="tab 处理"></a>tab 处理</h2><p>Here Document 还有一个用法就是将 ‘&lt;&lt;’ 变为 ‘&lt;&lt;-‘。 使用 &lt;&lt;- 的唯一变化就是Here Document 的内容部分每行前面的 tab (制表符)将会被删除掉，这种用法是为了编写Here Document的时候可以将内容部分进行缩进，方便阅读代码。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>本文参考<a href="https://my.oschina.net/u/1032146/blog/146941" target="_blank" rel="noopener">开源中国</a> </p>
 
       
     </div>
@@ -494,7 +508,7 @@
     <strong>本文作者： </strong>云淡天长</li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://yundantianchang.github.io/blogs/2018/0905-1.html" title="fluent在ubuntu平台安装配置教程">https://yundantianchang.github.io/blogs/2018/0905-1.html</a>
+    <a href="https://yundantianchang.github.io/blogs/2018/1023-2.html" title="bash here document">https://yundantianchang.github.io/blogs/2018/1023-2.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！</li>
@@ -507,11 +521,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/ansys/" rel="tag"># ansys</a>
+            <a href="/tags/linux/" rel="tag"># linux</a>
           
-            <a href="/tags/fluent/" rel="tag"># fluent</a>
+            <a href="/tags/bash/" rel="tag"># bash</a>
           
-            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+            <a href="/tags/shell/" rel="tag"># shell</a>
           
         </div>
       
@@ -524,8 +538,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blogs/2016/1207-1.html" rel="next" title="fluent17在win7平台启动卡死问题">
-                <i class="fa fa-chevron-left"></i> fluent17在win7平台启动卡死问题
+              <a href="/blogs/2018/1023-1.html" rel="next" title="使用cut进行字符串截取">
+                <i class="fa fa-chevron-left"></i> 使用cut进行字符串截取
               </a>
             
           </div>
@@ -533,10 +547,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blogs/2018/0906-1.html" rel="prev" title="icem在ubuntu平台安装配置教程">
-                icem在ubuntu平台安装配置教程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -791,7 +801,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#原因"><span class="nav-number">2.</span> <span class="nav-text">原因</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#解决方案"><span class="nav-number">3.</span> <span class="nav-text">解决方案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#适用条件"><span class="nav-number">4.</span> <span class="nav-text">适用条件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是Here-Document"><span class="nav-number">1.</span> <span class="nav-text">什么是Here Document</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Here-Document的变形"><span class="nav-number">2.</span> <span class="nav-text">Here Document的变形</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#展开变量"><span class="nav-number">2.1.</span> <span class="nav-text">展开变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不展开变量"><span class="nav-number">2.2.</span> <span class="nav-text">不展开变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tab-处理"><span class="nav-number">2.3.</span> <span class="nav-text">tab 处理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>

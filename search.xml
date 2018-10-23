@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[bash here document]]></title>
+    <url>%2Fblogs%2F2018%2F1023-2.html</url>
+    <content type="text"><![CDATA[什么是Here DocumentHere Document 是在Linux Shell 中的一种特殊的重定向方式，它的基本的形式如下123cmd &lt;&lt; delimiter Here Document Contentdelimiter 它的作用就是将两个 delimiter 之间的内容(Here Document Content 部分) 传递给cmd 作为输入参数。 比如在终端中输入cat &lt;&lt; EOF ，系统会提示继续进行输入，输入多行信息再输入EOF，中间输入的信息将会显示在屏幕上。如下：12345678fish@mangos:~$ cat &lt;&lt; EOF&gt; First Line&gt; Second Line&gt; Third Line EOF&gt; EOFFirst LineSecond LineThird Line EOF 注： &gt;这个符号是终端产生的提示输入信息的标识符 这里要注意几点 EOF 只是一个标识而已，可以替换成任意的合法字符 作为结尾的delimiter一定要顶格写，前面不能有任何字符 作为结尾的delimiter后面也不能有任何的字符（包括空格） 作为起始的delimiter前后的空格会被省略掉 Here Document 不仅可以在终端上使用，在shell 文件中也可以使用，例如下面的here.sh 文件1234cat &lt;&lt; EOF &gt; output.shecho &quot;hello&quot;echo &quot;world&quot;EOF 使用 sh here.sh 运行这个脚本文件，会得到output.sh 这个新文件，里面的内容如下12echo &quot;hello&quot;echo &quot;world&quot; Here Document的变形展开变量在Here Document 的内容中，不仅可以包括普通的字符，还可以在里面使用变量，例如将上面的here.sh 改为1234cat &lt;&lt; EOF &gt; output.shecho &quot;This is output&quot;echo $1EOF 使用sh here.sh HereDocument 运行脚本得到output.sh的内容12echo &quot;This is output&quot;echo HereDocument 在这里 $1 被展开成为了脚本的参数 HereDocument 不展开变量但是有时候不想展开这个变量怎么办呢，可以通过在起始的 delimiter的前后添加 “ 来实现，例如将上面的here.sh 改为1234cat &lt;&lt; &quot;EOF&quot; &gt; output.sh #注意引号echo &quot;hello&quot;echo &quot;world&quot;EOF 得到的output.sh 的内容为12echo &quot;This is output&quot;echo $1 tab 处理Here Document 还有一个用法就是将 ‘&lt;&lt;’ 变为 ‘&lt;&lt;-‘。 使用 &lt;&lt;- 的唯一变化就是Here Document 的内容部分每行前面的 tab (制表符)将会被删除掉，这种用法是为了编写Here Document的时候可以将内容部分进行缩进，方便阅读代码。 参考本文参考开源中国]]></content>
+      <categories>
+        <category>bash</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+        <tag>bash</tag>
+        <tag>shell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用cut进行字符串截取]]></title>
     <url>%2Fblogs%2F2018%2F1023-1.html</url>
     <content type="text"><![CDATA[shell中除了使用变量本身进行字符串截取外 ,还可以使用cut命令来进行 使用 cut 进行字符串截取cut 命令字符串提取方法： 1、字节（bytes），用选项-b2、字符（characters），用选项-c注意,格式可以使用1-3格式,或者1,4,5格式,也可以两者混用 字节 -b 的使用1who|cut -b 1-4 字符 -c 的使用1who|cut -c 1-4]]></content>
@@ -69,8 +82,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>ubuntu</tag>
         <tag>wine</tag>
         <tag>wechat</tag>
         <tag>微信</tag>
@@ -84,8 +97,8 @@
         <category>linux</category>
       </categories>
       <tags>
-        <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>ubuntu</tag>
         <tag>wine</tag>
         <tag>thunder</tag>
         <tag>迅雷</tag>
@@ -136,8 +149,8 @@
       </categories>
       <tags>
         <tag>ansys</tag>
-        <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>ubuntu</tag>
         <tag>cfx</tag>
       </tags>
   </entry>
@@ -146,8 +159,8 @@
     <url>%2Fblogs%2F2018%2F1005-1.html</url>
     <content type="text"><![CDATA[在网上随便买一个无线网卡,一般都会提供windows的无线网卡驱动,而linux驱动提供的比较少,而且一般不提供技术支持,因此在选购时需要慎重. 获得芯片类型无线网卡最重要的就是芯片,外观什么的并不影响系统对其识别,因此在购买网卡时一定要查询其芯片类型.例如对于我购买的comfast CF-WU810N 无线网卡,介绍页面显示其芯片类型为 RTL8188EUS.对于介绍页面没有的,可以咨询客服或者到wikidevi 网站查询,需要注意的是,网站上网卡信息并不全. 查询内核支持情况获得芯片类型后,到passys 网站查询linux内核对芯片支持情况.对于我的网卡RTL8188EUS,其内核支持情况为Some are supported(页面显示为黄色),说明内核对其有一定的支持.在ubuntu18.04上插上之后,系统可以直接识别,可以接收到wifi信号并连接,但是,无法创建AP,功能收到限制. 寻找更好的驱动在github上搜索了一下,获得了一些第三方的驱动lwfinger 和 quickreflex,对两种驱动都进行了安装,测试发现,lwfinger的驱动仍然无法创建ap,而quickreflex的驱动则可以完美创建ap(使用create_ap ),问题解决.另外,也有一些其它的驱动,例如realtek官方提供的驱动(2013年的),其版本太老,无法编译(内核版本不支持).]]></content>
       <tags>
-        <tag>ubuntu</tag>
         <tag>linux</tag>
+        <tag>ubuntu</tag>
         <tag>无线网卡</tag>
         <tag>8188EU</tag>
         <tag>8188EUS</tag>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-23T02:04:33.000Z</updated>
+  <updated>2018-10-23T06:35:41.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>bash here document</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1023-2.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1023-2.html</id>
+    <published>2018-10-23T06:35:41.000Z</published>
+    <updated>2018-10-23T06:35:41.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><a id="more"></a><h1 id="什么是Here-Document"><a href="#什么是Here-Document" class="headerlink" title="什么是Here Document"></a>什么是Here Document</h1><p>Here Document 是在Linux Shell 中的一种特殊的重定向方式，它的基本的形式如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cmd &lt;&lt; delimiter</span><br><span class="line">  Here Document Content</span><br><span class="line">delimiter</span><br></pre></td></tr></table></figure></p><p>它的作用就是将两个 delimiter 之间的内容(Here Document Content 部分) 传递给cmd 作为输入参数。</p><p>比如在终端中输入cat &lt;&lt; EOF ，系统会提示继续进行输入，输入多行信息再输入EOF，中间输入的信息将会显示在屏幕上。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">fish@mangos:~$ cat &lt;&lt; EOF</span><br><span class="line">&gt; First Line</span><br><span class="line">&gt; Second Line</span><br><span class="line">&gt; Third Line EOF</span><br><span class="line">&gt; EOF</span><br><span class="line">First Line</span><br><span class="line">Second Line</span><br><span class="line">Third Line EOF</span><br></pre></td></tr></table></figure></p><p>注： &gt;这个符号是终端产生的提示输入信息的标识符</p><p>这里要注意几点</p><pre><code>EOF 只是一个标识而已，可以替换成任意的合法字符作为结尾的delimiter一定要顶格写，前面不能有任何字符作为结尾的delimiter后面也不能有任何的字符（包括空格）作为起始的delimiter前后的空格会被省略掉</code></pre><p>Here Document 不仅可以在终端上使用，在shell 文件中也可以使用，例如下面的here.sh 文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt; output.sh</span><br><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p><p>使用 sh here.sh 运行这个脚本文件，会得到output.sh 这个新文件，里面的内容如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br></pre></td></tr></table></figure></p><h1 id="Here-Document的变形"><a href="#Here-Document的变形" class="headerlink" title="Here Document的变形"></a>Here Document的变形</h1><h2 id="展开变量"><a href="#展开变量" class="headerlink" title="展开变量"></a>展开变量</h2><p>在Here Document 的内容中，不仅可以包括普通的字符，还可以在里面使用变量，例如将上面的here.sh 改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; EOF &gt; output.sh</span><br><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo $1</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p><p>使用sh here.sh HereDocument 运行脚本得到output.sh的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo HereDocument</span><br></pre></td></tr></table></figure></p><p>在这里 $1 被展开成为了脚本的参数 HereDocument</p><h2 id="不展开变量"><a href="#不展开变量" class="headerlink" title="不展开变量"></a>不展开变量</h2><p>但是有时候不想展开这个变量怎么办呢，可以通过在起始的 delimiter的前后添加 “ 来实现，例如将上面的here.sh 改为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; &quot;EOF&quot; &gt; output.sh  #注意引号</span><br><span class="line">echo &quot;hello&quot;</span><br><span class="line">echo &quot;world&quot;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure></p><p>得到的output.sh 的内容为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;This is output&quot;</span><br><span class="line">echo $1</span><br></pre></td></tr></table></figure></p><h2 id="tab-处理"><a href="#tab-处理" class="headerlink" title="tab 处理"></a>tab 处理</h2><p>Here Document 还有一个用法就是将 ‘&lt;&lt;’ 变为 ‘&lt;&lt;-‘。 使用 &lt;&lt;- 的唯一变化就是Here Document 的内容部分每行前面的 tab (制表符)将会被删除掉，这种用法是为了编写Here Document的时候可以将内容部分进行缩进，方便阅读代码。</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>本文参考<a href="https://my.oschina.net/u/1032146/blog/146941" target="_blank" rel="noopener">开源中国</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+    
+    </summary>
+    
+      <category term="bash" scheme="https://yundantianchang.github.io/categories/bash/"/>
+    
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="bash" scheme="https://yundantianchang.github.io/tags/bash/"/>
+    
+      <category term="shell" scheme="https://yundantianchang.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>使用cut进行字符串截取</title>
@@ -167,9 +195,9 @@
       <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
     
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
@@ -197,9 +225,9 @@
       <category term="linux" scheme="https://yundantianchang.github.io/categories/linux/"/>
     
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
@@ -301,9 +329,9 @@
     
       <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="cfx" scheme="https://yundantianchang.github.io/tags/cfx/"/>
     
@@ -325,9 +353,9 @@
     </summary>
     
     
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="无线网卡" scheme="https://yundantianchang.github.io/tags/%E6%97%A0%E7%BA%BF%E7%BD%91%E5%8D%A1/"/>
     
@@ -509,34 +537,6 @@
       <category term="fluent" scheme="https://yundantianchang.github.io/tags/fluent/"/>
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>fluent17在win7平台启动卡死问题</title>
-    <link href="https://yundantianchang.github.io/blogs/2016/1207-1.html"/>
-    <id>https://yundantianchang.github.io/blogs/2016/1207-1.html</id>
-    <published>2016-12-07T15:08:00.000Z</published>
-    <updated>2018-09-01T15:00:00.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>fluent在win7 sp1上无法使用,启动卡死.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>fluent的求解器使用了 kernel32.dll 中的AddDllDirectory函数,而该函数在win7 sp1 中并不存在,结果fluent启动后卡死,无法使用.<br>AddDllDirectory的说明网址为<br><a href="https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh310513(v=vs.85).aspx" target="_blank" rel="noopener">https://msdn.microsoft.com/zh-cn/library/windows/desktop/hh310513(v=vs.85).aspx</a><br>对于该问题,其核心内容为KB2533623 on Windows 7, Windows Server 2008 R2, Windows Vista, and Windows Server 2008</p><h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>解决方法很简单,安装KB2533623补丁即可.经测试,本方法同样适用于ansys18.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;fluent在win7 sp1上无法使用,启动卡死.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="fluent" scheme="https://yundantianchang.github.io/categories/fluent/"/>
-    
-    
-      <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
-    
-      <category term="fluent" scheme="https://yundantianchang.github.io/tags/fluent/"/>
-    
-      <category term="window" scheme="https://yundantianchang.github.io/tags/window/"/>
-    
-      <category term="win7" scheme="https://yundantianchang.github.io/tags/win7/"/>
     
   </entry>
   
