@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-22T14:16:24.000Z</updated>
+  <updated>2018-10-23T02:04:33.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用cut进行字符串截取</title>
+    <link href="https://yundantianchang.github.io/blogs/2018/1023-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2018/1023-1.html</id>
+    <published>2018-10-23T02:04:33.000Z</published>
+    <updated>2018-10-23T02:04:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><a id="more"></a><p>shell中除了使用<a href="https://yundantianchang.github.io/blogs/2018/1010-2.html">变量本身</a>进行字符串截取外 ,还可以使用cut命令来进行</p><h1 id="使用-cut-进行字符串截取"><a href="#使用-cut-进行字符串截取" class="headerlink" title="使用 cut 进行字符串截取"></a>使用 cut 进行字符串截取</h1><p>cut 命令字符串提取方法：</p><p>1、字节（bytes），用选项-b<br>2、字符（characters），用选项-c<br>注意,格式可以使用1-3格式,或者1,4,5格式,也可以两者混用</p><h1 id="字节-b-的使用"><a href="#字节-b-的使用" class="headerlink" title="字节 -b 的使用"></a>字节 -b 的使用</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who|cut -b 1-4</span><br></pre></td></tr></table></figure><p>字符 -c 的使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who|cut -c 1-4</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+    
+    </summary>
+    
+      <category term="shell" scheme="https://yundantianchang.github.io/categories/shell/"/>
+    
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="shell" scheme="https://yundantianchang.github.io/tags/shell/"/>
+    
+      <category term="cut" scheme="https://yundantianchang.github.io/tags/cut/"/>
+    
+  </entry>
   
   <entry>
     <title>vmware虚拟主机与物理主机共享文件方法</title>
@@ -452,9 +480,9 @@
     
       <category term="ansys" scheme="https://yundantianchang.github.io/tags/ansys/"/>
     
-      <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
-    
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="icem" scheme="https://yundantianchang.github.io/tags/icem/"/>
     
   </entry>
   
