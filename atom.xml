@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2018-10-29T08:46:36.000Z</updated>
+  <updated>2019-01-21T08:46:08.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mathtype公式添加超链接</title>
+    <link href="https://yundantianchang.github.io/blogs/2019/0121-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2019/0121-1.html</id>
+    <published>2019-01-21T08:46:08.000Z</published>
+    <updated>2019-01-21T08:46:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><p>进行论文写作时,一般需要进行公式的录入,mathtype是一个比较好的选择.<br><a id="more"></a></p><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>可是,mathtype公式在转换为pdf文件后,双击引用编号并不会跳转到公式,而其它引用如题注等则可以进行跳转.</p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>mathtype 添加公式引用时并没有添加超链接.截止最新版本7.4都没有超链接设置选项(而<a href="https://yundantianchang.github.io/blogs/2018/1021-1.html">endnote</a>是有的).</p><h1 id="如何进行解决"><a href="#如何进行解决" class="headerlink" title="如何进行解决"></a>如何进行解决</h1><p>将全文切换为域代码(快捷键Alt+F9),然后搜索REF域,字符串开头是”REF ZEqnNum”,在这个域最后添加 \h参数.</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>参考<a href="https://blog.csdn.net/X_And_Y/article/details/70853645#commentBox" target="_blank" rel="noopener">csdn</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+&lt;p&gt;进行论文写作时,一般需要进行公式的录入,mathtype是一个比较好的选择.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="word" scheme="https://yundantianchang.github.io/categories/word/"/>
+    
+    
+      <category term="word" scheme="https://yundantianchang.github.io/tags/word/"/>
+    
+      <category term="mathtype" scheme="https://yundantianchang.github.io/tags/mathtype/"/>
+    
+  </entry>
   
   <entry>
     <title>删除word连续分节符</title>
@@ -514,33 +541,6 @@
     
     
       <category term="catia" scheme="https://yundantianchang.github.io/tags/catia/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Shell脚本8种字符串截取方法总结</title>
-    <link href="https://yundantianchang.github.io/blogs/2018/0910-1.html"/>
-    <id>https://yundantianchang.github.io/blogs/2018/0910-1.html</id>
-    <published>2018-09-10T08:03:59.000Z</published>
-    <updated>2018-09-10T08:03:59.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="https://www.jb51.net/article/56563.htm" target="_blank" rel="noopener">转载自脚本之家</a> </p><p>这篇文章主要介绍了Shell脚本8种字符串截取方法总结,每个方法给出了实例代码和操作结果,一目了然,需要的朋友可以参考下</p><a id="more"></a><p>Linux 的字符串截取很有用。有八种方法。</p><p>假设有变量 var=<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">http://www.aaa.com/123.htm</a>.</p><h1 id="号截取，删除左边字符，保留右边字符。"><a href="#号截取，删除左边字符，保留右边字符。" class="headerlink" title="# 号截取，删除左边字符，保留右边字符。"></a># 号截取，删除左边字符，保留右边字符。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var#*//&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中 var 是变量名，# 号是运算符，*// 表示从左边开始删除第一个 // 号及左边的所有字符<br>即删除 http://<br>结果是 ：<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">www.aaa.com/123.htm</a></p><h1 id="号截取，删除左边字符，保留右边字符。-1"><a href="#号截取，删除左边字符，保留右边字符。-1" class="headerlink" title="## 号截取，删除左边字符，保留右边字符。"></a>## 号截取，删除左边字符，保留右边字符。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var##*/&#125;</span></span><br></pre></td></tr></table></figure></p><p>##*/ 表示从左边开始删除最后（最右边）一个 / 号及左边的所有字符<br>即删除 <a href="http://www.aaa.com/" target="_blank" rel="noopener">http://www.aaa.com/</a></p><p>结果是 123.htm</p><h1 id="号截取，删除右边字符，保留左边字符"><a href="#号截取，删除右边字符，保留左边字符" class="headerlink" title="%号截取，删除右边字符，保留左边字符"></a>%号截取，删除右边字符，保留左边字符</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var%/*&#125;</span></span><br></pre></td></tr></table></figure></p><p>%/* 表示从右边开始，删除第一个 / 号及右边的字符</p><p>结果是：<a href="http://www.aaa.com" target="_blank" rel="noopener">http://www.aaa.com</a></p><h1 id="号截取，删除右边字符，保留左边字符-1"><a href="#号截取，删除右边字符，保留左边字符-1" class="headerlink" title="%% 号截取，删除右边字符，保留左边字符"></a>%% 号截取，删除右边字符，保留左边字符</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var%%/*&#125;</span></span><br></pre></td></tr></table></figure></p><p>%%/* 表示从右边开始，删除最后（最左边）一个 / 号及右边的字符<br>结果是：http:</p><h1 id="从左边第几个字符开始，及字符的个数"><a href="#从左边第几个字符开始，及字符的个数" class="headerlink" title="从左边第几个字符开始，及字符的个数"></a>从左边第几个字符开始，及字符的个数</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0:5&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 0 表示左边第一个字符开始，5 表示字符的总个数。<br>结果是：http:</p><h1 id="从左边第几个字符开始，一直到结束。"><a href="#从左边第几个字符开始，一直到结束。" class="headerlink" title="从左边第几个字符开始，一直到结束。"></a>从左边第几个字符开始，一直到结束。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:7&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 7 表示左边第8个字符开始，一直到结束。<br>结果是 ：<a href="http://www.aaa.com/123.htm" target="_blank" rel="noopener">www.aaa.com/123.htm</a></p><h1 id="从右边第几个字符开始，及字符的个数"><a href="#从右边第几个字符开始，及字符的个数" class="headerlink" title="从右边第几个字符开始，及字符的个数"></a>从右边第几个字符开始，及字符的个数</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0-7:3&#125;</span></span><br></pre></td></tr></table></figure></p><p>其中的 0-7 表示右边算起第七个字符开始，3 表示字符的个数。<br>结果是：123</p><h1 id="从右边第几个字符开始，一直到结束。"><a href="#从右边第几个字符开始，一直到结束。" class="headerlink" title="从右边第几个字符开始，一直到结束。"></a>从右边第几个字符开始，一直到结束。</h1><p>代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$&#123;var:0-7&#125;</span></span><br></pre></td></tr></table></figure></p><p>表示从右边第七个字符开始，一直到结束。<br>结果是：123.htm</p><p>注：（左边的第一个字符是用 0 表示，右边的第一个字符用 0-1 表示）</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;https://www.jb51.net/article/56563.htm&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;转载自脚本之家&lt;/a&gt; &lt;/p&gt;
-&lt;p&gt;这篇文章主要介绍了Shell脚本8种字符串截取方法总结,每个方法给出了实例代码和操作结果,一目了然,需要的朋友可以参考下&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="bash" scheme="https://yundantianchang.github.io/categories/bash/"/>
-    
-    
-      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
-    
-      <category term="bash" scheme="https://yundantianchang.github.io/tags/bash/"/>
-    
-      <category term="shell" scheme="https://yundantianchang.github.io/tags/shell/"/>
     
   </entry>
   

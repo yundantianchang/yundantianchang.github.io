@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[mathtype公式添加超链接]]></title>
+    <url>%2Fblogs%2F2019%2F0121-1.html</url>
+    <content type="text"><![CDATA[进行论文写作时,一般需要进行公式的录入,mathtype是一个比较好的选择. 问题可是,mathtype公式在转换为pdf文件后,双击引用编号并不会跳转到公式,而其它引用如题注等则可以进行跳转. 原因mathtype 添加公式引用时并没有添加超链接.截止最新版本7.4都没有超链接设置选项(而endnote是有的). 如何进行解决将全文切换为域代码(快捷键Alt+F9),然后搜索REF域,字符串开头是”REF ZEqnNum”,在这个域最后添加 \h参数. 参考参考csdn]]></content>
+      <categories>
+        <category>word</category>
+      </categories>
+      <tags>
+        <tag>word</tag>
+        <tag>mathtype</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[删除word连续分节符]]></title>
     <url>%2Fblogs%2F2018%2F1029-1.html</url>
     <content type="text"><![CDATA[问题描述word中删除分节符(连续)时,上一个分节符会自动变成分节符(连续),给我们直观的印象是分节符怎么跑上面去了. 后果当上一个分节符为分节符(奇数页)时,后果非常严重,文章排版会非常受影响. 正确方法先调整要删除分节符下面的页面格式与分节符上面的页面格式一致(主要是节的起始位置),然后再删除分节符.]]></content>
