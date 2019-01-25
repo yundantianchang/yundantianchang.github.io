@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2019-01-21T08:46:08.000Z</updated>
+  <updated>2019-01-25T11:06:12.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>wine-rrshare窗口无法移出屏幕问题</title>
+    <link href="https://yundantianchang.github.io/blogs/2019/0125-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2019/0125-1.html</id>
+    <published>2019-01-25T11:06:12.000Z</published>
+    <updated>2019-01-25T11:06:12.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><p>人人影视windows客户端可以完美地使用wine4.0运行(使用playonlinux),可是其主窗口却无法移出屏幕</p><a id="more"></a><p>解决方法很简单,添加窗口装饰即可.</p><h1 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h1><p>项目主页<a href="https://github.com/yundantianchang/wmctrl" target="_blank" rel="noopener">wmctrl</a> 提供的一键脚本<a href="https://github.com/yundantianchang/wmctrl/blob/master/tools/rrshare-fix.py" target="_blank" rel="noopener">rrshare-fix.py</a> 可以一步到位解决这个问题.</p><h1 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h1><p>安装gnome-shell扩展<a href="https://extensions.gnome.org/extension/1208/undecorate/" target="_blank" rel="noopener">Undecorate Window</a> ,可以通过界面添加窗口装饰</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+&lt;p&gt;人人影视windows客户端可以完美地使用wine4.0运行(使用playonlinux),可是其主窗口却无法移出屏幕&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="rrshare" scheme="https://yundantianchang.github.io/tags/rrshare/"/>
+    
+      <category term="人人影视" scheme="https://yundantianchang.github.io/tags/%E4%BA%BA%E4%BA%BA%E5%BD%B1%E8%A7%86/"/>
+    
+  </entry>
   
   <entry>
     <title>mathtype公式添加超链接</title>
@@ -280,9 +311,9 @@
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
-      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
-    
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
     
       <category term="wechat" scheme="https://yundantianchang.github.io/tags/wechat/"/>
     
@@ -310,9 +341,9 @@
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
-      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
-    
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
+    
+      <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
     
       <category term="thunder" scheme="https://yundantianchang.github.io/tags/thunder/"/>
     
@@ -519,28 +550,6 @@
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
       <category term="网易云音乐" scheme="https://yundantianchang.github.io/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>catia修图常用命令</title>
-    <link href="https://yundantianchang.github.io/blogs/2018/0915-1.html"/>
-    <id>https://yundantianchang.github.io/blogs/2018/0915-1.html</id>
-    <published>2018-09-15T08:01:43.000Z</published>
-    <updated>2018-09-25T08:01:43.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>catia 创成式外形设计 常用命令作用<br><a id="more"></a></p><h1 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h1><p>主要用于连接多个有缝曲面,也可以用来补洞,但是一定要注意参数设置,合并距离和距离目标参数设置要合适.</p><h1 id="取消修剪曲面"><a href="#取消修剪曲面" class="headerlink" title="取消修剪曲面"></a>取消修剪曲面</h1><p>用于还原被修改或者分割的曲面,也可以用来补洞,但是补洞之前可能需要对曲面进行拆解操作.</p><h1 id="拆解"><a href="#拆解" class="headerlink" title="拆解"></a>拆解</h1><p>用于将一个曲面拆分为多个曲面</p><h1 id="曲面简化"><a href="#曲面简化" class="headerlink" title="曲面简化"></a>曲面简化</h1><p>可以用来简化曲面,减少曲面复杂度,方便进行桥接和填充.</p><h1 id="封闭曲面"><a href="#封闭曲面" class="headerlink" title="封闭曲面"></a>封闭曲面</h1><p>曲面转实体</p><h1 id="添加"><a href="#添加" class="headerlink" title="添加"></a>添加</h1><p>进行布尔和运算</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;catia 创成式外形设计 常用命令作用&lt;br&gt;
-    
-    </summary>
-    
-      <category term="catia" scheme="https://yundantianchang.github.io/categories/catia/"/>
-    
-    
-      <category term="catia" scheme="https://yundantianchang.github.io/tags/catia/"/>
     
   </entry>
   

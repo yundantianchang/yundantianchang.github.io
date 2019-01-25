@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[wine-rrshare窗口无法移出屏幕问题]]></title>
+    <url>%2Fblogs%2F2019%2F0125-1.html</url>
+    <content type="text"><![CDATA[人人影视windows客户端可以完美地使用wine4.0运行(使用playonlinux),可是其主窗口却无法移出屏幕 解决方法很简单,添加窗口装饰即可. 方法1项目主页wmctrl 提供的一键脚本rrshare-fix.py 可以一步到位解决这个问题. 方法2安装gnome-shell扩展Undecorate Window ,可以通过界面添加窗口装饰]]></content>
+      <tags>
+        <tag>ubuntu</tag>
+        <tag>wine</tag>
+        <tag>linux</tag>
+        <tag>rrshare</tag>
+        <tag>人人影视</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[mathtype公式添加超链接]]></title>
     <url>%2Fblogs%2F2019%2F0121-1.html</url>
     <content type="text"><![CDATA[进行论文写作时,一般需要进行公式的录入,mathtype是一个比较好的选择. 问题可是,mathtype公式在转换为pdf文件后,双击引用编号并不会跳转到公式,而其它引用如题注等则可以进行跳转. 原因mathtype 添加公式引用时并没有添加超链接.截止最新版本7.4都没有超链接设置选项(而endnote是有的). 如何进行解决将全文切换为域代码(快捷键Alt+F9),然后搜索REF域,字符串开头是”REF ZEqnNum”,在这个域最后添加 \h参数. 参考参考csdn]]></content>
@@ -120,8 +132,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>linux</tag>
         <tag>wine</tag>
+        <tag>linux</tag>
         <tag>wechat</tag>
         <tag>微信</tag>
       </tags>
@@ -135,8 +147,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>linux</tag>
         <tag>wine</tag>
+        <tag>linux</tag>
         <tag>thunder</tag>
         <tag>迅雷</tag>
       </tags>
