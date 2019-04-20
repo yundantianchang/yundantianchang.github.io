@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yundantianchang.github.io/"/>
-  <updated>2019-01-25T11:06:12.000Z</updated>
+  <updated>2019-04-20T01:41:40.000Z</updated>
   <id>https://yundantianchang.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Firefox被百度强制跳转解决办法</title>
+    <link href="https://yundantianchang.github.io/blogs/2019/0420-1.html"/>
+    <id>https://yundantianchang.github.io/blogs/2019/0420-1.html</id>
+    <published>2019-04-20T01:41:40.000Z</published>
+    <updated>2019-04-20T01:41:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<!--keywords: --><!--posthide: false--><!--archivehide: false--><h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>firefox浏览器安卓版使用百度搜索时,某些页面(例如CSDN或者百度贴吧)会被百度强制跳转,说是要使用百度APP继续浏览.</p><a id="more"></a><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>安装<a href="https://addons.mozilla.org/zh-CN/android/addon/uaswitcher/" target="_blank" rel="noopener">User-Agent Switcher插件</a> ,设置UA为Android Phone/Chrome.</p><h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://xyuxf.com/archives/1580" target="_blank" rel="noopener">咸鱼先锋</a> </p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;!--keywords: --&gt;
+&lt;!--posthide: false--&gt;
+&lt;!--archivehide: false--&gt;
+&lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;firefox浏览器安卓版使用百度搜索时,某些页面(例如CSDN或者百度贴吧)会被百度强制跳转,说是要使用百度APP继续浏览.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="firefox" scheme="https://yundantianchang.github.io/categories/firefox/"/>
+    
+    
+      <category term="火狐" scheme="https://yundantianchang.github.io/tags/%E7%81%AB%E7%8B%90/"/>
+    
+      <category term="百度" scheme="https://yundantianchang.github.io/tags/%E7%99%BE%E5%BA%A6/"/>
+    
+      <category term="firefox" scheme="https://yundantianchang.github.io/tags/firefox/"/>
+    
+  </entry>
   
   <entry>
     <title>wine-rrshare窗口无法移出屏幕问题</title>
@@ -37,9 +66,9 @@
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
-      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
       <category term="rrshare" scheme="https://yundantianchang.github.io/tags/rrshare/"/>
     
@@ -230,9 +259,9 @@
       <category term="endnote" scheme="https://yundantianchang.github.io/categories/endnote/"/>
     
     
-      <category term="word" scheme="https://yundantianchang.github.io/tags/word/"/>
-    
       <category term="endnote" scheme="https://yundantianchang.github.io/tags/endnote/"/>
+    
+      <category term="word" scheme="https://yundantianchang.github.io/tags/word/"/>
     
   </entry>
   
@@ -311,9 +340,9 @@
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
-      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
       <category term="wechat" scheme="https://yundantianchang.github.io/tags/wechat/"/>
     
@@ -341,9 +370,9 @@
     
       <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
     
-      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
-    
       <category term="linux" scheme="https://yundantianchang.github.io/tags/linux/"/>
+    
+      <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
     
       <category term="thunder" scheme="https://yundantianchang.github.io/tags/thunder/"/>
     
@@ -526,30 +555,6 @@
       <category term="windows" scheme="https://yundantianchang.github.io/tags/windows/"/>
     
       <category term="wine" scheme="https://yundantianchang.github.io/tags/wine/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>网易云音乐在ubuntu18.04配置</title>
-    <link href="https://yundantianchang.github.io/blogs/2018/0920-1.html"/>
-    <id>https://yundantianchang.github.io/blogs/2018/0920-1.html</id>
-    <published>2018-09-20T04:19:37.000Z</published>
-    <updated>2018-09-20T04:19:37.000Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>网易云音乐ubuntu平台最新版本为<a href="https://music.163.com/#/download" target="_blank" rel="noopener">1.1.0</a> ,在ubuntu16.04平台使用没有问题,但是在ubuntu18.04上,会出现无法启动的问题.<br><a id="more"></a></p><h1 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h1><p>ubuntu18.04相对于ubuntu16.04桌面环境有所变化,而网易云音乐尚未对ubuntu18.04进行适配工作.</p><h1 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h1><p>比较两个系统平台桌面环境差别之后发现,重要原因就是SESSION_MANAGER差异.因此解决方法很简单,在启动网易云音乐之前,删掉SESSION_MANAGER环境变量即可.代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">unset</span> SESSION_MANAGER</span><br><span class="line">/usr/bin/netease-cloud-music</span><br></pre></td></tr></table></figure></p><p>在终端直接运行上述命令,网易云音乐立即就会正常启动.也可以使用以下方法将其集成到桌面环境,代码如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建$HOME/bin 目录</span></span><br><span class="line">mkdir -p ~/bin/</span><br><span class="line"><span class="comment"># 创建启动脚本</span></span><br><span class="line">cat &lt;&lt; eof &gt; ~/bin/netease-cloud-music</span><br><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">unset</span> SESSION_MANAGER</span><br><span class="line"><span class="built_in">exec</span> /usr/bin/netease-cloud-music <span class="string">"\$@"</span></span><br><span class="line">eof</span><br><span class="line"><span class="comment"># 添加可执行权限</span></span><br><span class="line">chmod +x ~/bin/netease-cloud-music</span><br></pre></td></tr></table></figure></p><p>实现原理为使用自定义的启动脚本取代网易云音乐启动脚本.可能需要注销之后才能生效,以实际测试为准.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h1&gt;&lt;p&gt;网易云音乐ubuntu平台最新版本为&lt;a href=&quot;https://music.163.com/#/download&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;1.1.0&lt;/a&gt; ,在ubuntu16.04平台使用没有问题,但是在ubuntu18.04上,会出现无法启动的问题.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/categories/ubuntu/"/>
-    
-    
-      <category term="ubuntu" scheme="https://yundantianchang.github.io/tags/ubuntu/"/>
-    
-      <category term="网易云音乐" scheme="https://yundantianchang.github.io/tags/%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90/"/>
     
   </entry>
   

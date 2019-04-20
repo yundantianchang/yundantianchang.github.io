@@ -1,13 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Firefox被百度强制跳转解决办法]]></title>
+    <url>%2Fblogs%2F2019%2F0420-1.html</url>
+    <content type="text"><![CDATA[问题描述firefox浏览器安卓版使用百度搜索时,某些页面(例如CSDN或者百度贴吧)会被百度强制跳转,说是要使用百度APP继续浏览. 解决方法安装User-Agent Switcher插件 ,设置UA为Android Phone/Chrome. 参考咸鱼先锋]]></content>
+      <categories>
+        <category>firefox</category>
+      </categories>
+      <tags>
+        <tag>火狐</tag>
+        <tag>百度</tag>
+        <tag>firefox</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[wine-rrshare窗口无法移出屏幕问题]]></title>
     <url>%2Fblogs%2F2019%2F0125-1.html</url>
     <content type="text"><![CDATA[人人影视windows客户端可以完美地使用wine4.0运行(使用playonlinux),可是其主窗口却无法移出屏幕 解决方法很简单,添加窗口装饰即可. 方法1项目主页wmctrl 提供的一键脚本rrshare-fix.py 可以一步到位解决这个问题. 方法2安装gnome-shell扩展Undecorate Window ,可以通过界面添加窗口装饰]]></content>
       <tags>
         <tag>ubuntu</tag>
-        <tag>wine</tag>
         <tag>linux</tag>
+        <tag>wine</tag>
         <tag>rrshare</tag>
         <tag>人人影视</tag>
       </tags>
@@ -94,8 +107,8 @@
         <category>endnote</category>
       </categories>
       <tags>
-        <tag>word</tag>
         <tag>endnote</tag>
+        <tag>word</tag>
       </tags>
   </entry>
   <entry>
@@ -132,8 +145,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>wine</tag>
         <tag>linux</tag>
+        <tag>wine</tag>
         <tag>wechat</tag>
         <tag>微信</tag>
       </tags>
@@ -147,8 +160,8 @@
       </categories>
       <tags>
         <tag>ubuntu</tag>
-        <tag>wine</tag>
         <tag>linux</tag>
+        <tag>wine</tag>
         <tag>thunder</tag>
         <tag>迅雷</tag>
       </tags>
